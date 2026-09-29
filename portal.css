@@ -1,0 +1,388 @@
+/* =========================================================
+   Portal informativo · Facción Médica Malibu
+   Hoja de estilos compartida por todas las páginas.
+   ========================================================= */
+
+/* ---------- Variables ---------- */
+:root{
+  --bg:#06111c; --line:rgba(116,205,255,.22);
+  --text:#f5fbff; --muted:#a9bfd0; --cyan:#69d3ff; --red:#ff4b4b; --green:#29d391;
+  --shadow:0 20px 50px rgba(0,0,0,.28);
+  --panel-grad:linear-gradient(180deg,rgba(17,42,62,.96),rgba(9,24,36,.96));
+  --card-grad:linear-gradient(180deg,rgba(16,39,58,.96),rgba(8,22,33,.96));
+  --card-grad-hover:linear-gradient(180deg,rgba(18,51,74,.98),rgba(9,28,42,.98));
+  --box-grad:linear-gradient(180deg,rgba(11,33,49,.84),rgba(7,22,34,.90));
+}
+
+/* ---------- Base ---------- */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--text); min-height:100vh;
+  background:
+    radial-gradient(circle at 15% 5%, rgba(0,166,255,.18), transparent 24rem),
+    radial-gradient(circle at 85% 15%, rgba(255,75,75,.12), transparent 22rem),
+    linear-gradient(180deg,#07131f 0%,#06111c 55%,#040b12 100%);
+}
+.wrap{max-width:1200px; margin:auto; padding:44px 18px 70px}
+
+/* ---------- Barra superior ---------- */
+.topbar{
+  position:sticky; top:0; z-index:30; backdrop-filter:blur(14px);
+  background:rgba(4,11,18,.78); border-bottom:1px solid rgba(255,255,255,.07);
+}
+.topbar-inner{
+  max-width:1200px; margin:auto; padding:13px 18px; display:flex;
+  align-items:center; justify-content:space-between; gap:14px;
+}
+.brand-mini{display:flex; align-items:center; gap:10px; font-weight:800; color:inherit; text-decoration:none}
+.brand-mini .mark{width:36px; height:36px; display:grid; place-items:center}
+.mark img,.welcome-icon img{width:100%; height:100%; object-fit:contain; display:block}
+
+.ascensos{display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end; margin-left:auto}
+.home-btn{
+  display:inline-flex; align-items:center; gap:6px; padding:8px 13px; border-radius:999px; text-decoration:none;
+  color:#ecf8ff; font-size:.78rem; font-weight:800; white-space:nowrap;
+  background:var(--panel-grad); border:1px solid rgba(105,211,255,.3);
+  transition:transform .18s ease,border-color .18s ease
+}
+.home-btn:hover{transform:translateY(-1px); border-color:rgba(105,211,255,.6)}
+
+/* Botones de ascenso: el degradado indica el cambio de color de bata */
+.ascenso-btn{
+  --from:rgba(238,243,247,.18); --to:rgba(31,95,214,.45); --ring:rgba(143,212,255,.4); --glow:rgba(58,167,255,.35);
+  display:inline-flex; align-items:center; gap:6px; padding:6px 12px 6px 9px;
+  border-radius:999px; text-decoration:none; color:#fff; font-size:.72rem; font-weight:800; white-space:nowrap;
+  background:linear-gradient(90deg,var(--from),var(--to));
+  box-shadow:inset 0 0 0 1px var(--ring),0 0 14px var(--glow);
+  transition:transform .18s ease,box-shadow .18s ease
+}
+.ascenso-btn:hover{transform:translateY(-1px); box-shadow:inset 0 0 0 1px var(--ring),0 0 26px var(--glow)}
+.ascenso-btn[aria-current="page"]{box-shadow:inset 0 0 0 2px #fff,0 0 26px var(--glow)}
+.ascenso-btn .coat-arrow{font-size:.7rem; color:rgba(255,255,255,.75)}
+.ascenso-btn{padding:7px 12px}
+/* Botones solo con colores: el texto queda oculto pero accesible para lectores de pantalla */
+.ascenso-label{position:absolute; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0}
+.ascenso-btn.to-blue  {--from:rgba(238,243,247,.18); --to:rgba(31,95,214,.45);  --ring:rgba(143,212,255,.45); --glow:rgba(58,167,255,.4)}
+.ascenso-btn.to-purple{--from:rgba(31,95,214,.40);   --to:rgba(122,61,255,.50); --ring:rgba(179,107,255,.45); --glow:rgba(154,91,255,.4)}
+.ascenso-btn.to-brown {--from:rgba(122,61,255,.45);  --to:rgba(160,88,43,.55);  --ring:rgba(212,147,95,.5);  --glow:rgba(185,118,63,.4)}
+.ascenso-btn.to-green {--from:rgba(160,88,43,.55);   --to:rgba(22,140,96,.55);  --ring:rgba(73,220,160,.5);  --glow:rgba(41,211,145,.4)}
+.ascenso-btn.to-violet{--from:rgba(22,140,96,.50);   --to:rgba(190,60,230,.55); --ring:rgba(226,130,255,.5); --glow:rgba(214,77,255,.4)}
+
+.coat-dot{width:13px; height:13px; border-radius:50%; flex:0 0 auto; display:inline-block}
+.coat-dot.white {background:#f4f7fa; box-shadow:0 0 8px rgba(255,255,255,.6)}
+.coat-dot.blue  {background:#2f7df0; box-shadow:0 0 8px rgba(58,167,255,.8)}
+.coat-dot.purple{background:#9a5bff; box-shadow:0 0 8px rgba(167,98,255,.8)}
+.coat-dot.brown {background:#b9763f; box-shadow:0 0 8px rgba(212,147,95,.8)}
+.coat-dot.green {background:#29d391; box-shadow:0 0 8px rgba(41,211,145,.8)}
+.coat-dot.violet{background:#d64dff; box-shadow:0 0 8px rgba(214,77,255,.8)}
+
+/* ---------- Portada ---------- */
+.hero{
+  text-align:center; min-height:460px; padding:34px 22px 38px; position:relative; overflow:hidden;
+  border-radius:28px; border:1px solid rgba(105,211,255,.15); box-shadow:var(--shadow);
+  display:flex; flex-direction:column; justify-content:flex-end;
+  background:
+    linear-gradient(180deg,rgba(3,9,15,.10) 0%,rgba(3,9,15,.28) 35%,rgba(3,9,15,.88) 78%,rgba(3,9,15,.96) 100%),
+    var(--hero-img, url('assets/zona-lenador.jpeg')) var(--hero-pos, center 45%)/cover no-repeat;
+}
+.hero.home{min-height:500px; --hero-img:url('assets/angel_portada.webp'); --hero-pos:center 42%}
+.hero h1{text-shadow:0 4px 28px rgba(0,0,0,.9)}
+.hero .sub,.hero .hint{text-shadow:0 2px 12px rgba(0,0,0,.95)}
+.eyebrow{
+  align-self:center; display:inline-flex; align-items:center; gap:8px; margin-bottom:14px;
+  padding:7px 14px; border-radius:999px; font-size:.75rem; font-weight:900; letter-spacing:.24em;
+  background:rgba(4,11,18,.6); border:1px solid rgba(255,255,255,.14); color:#d8ecf8
+}
+h1{margin:0; font-size:clamp(1.9rem,4.6vw,3.6rem); letter-spacing:-.03em; line-height:1.08}
+.accent{
+  background:linear-gradient(90deg,#ffffff 0%,#8bdfff 45%,#ffffff 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent
+}
+.sub{margin:13px auto 0; max-width:760px; color:var(--muted); font-size:clamp(1rem,2vw,1.18rem); line-height:1.6}
+.hint{margin-top:14px; color:#c2d5e4; font-size:.92rem}
+.days{
+  align-self:center; margin-top:18px; display:inline-flex; align-items:center; gap:10px;
+  padding:10px 16px; border-radius:14px; font-weight:800; font-size:.92rem;
+  background:rgba(12,166,255,.14); border:1px solid rgba(105,211,255,.3)
+}
+.days small{color:#8fdcff; font-size:.72rem; letter-spacing:.14em}
+
+/* ---------- Tarjeta de bienvenida / aviso ---------- */
+.welcome-card{
+  margin:34px 0 0; display:grid; grid-template-columns:auto 1fr; gap:16px; align-items:center;
+  padding:20px 22px; border-radius:20px; background:var(--box-grad);
+  border:1px solid rgba(105,211,255,.22); box-shadow:0 18px 50px rgba(0,0,0,.28);
+}
+.welcome-card.warn{border-color:rgba(255,197,61,.35)}
+.welcome-icon{width:64px; height:64px; display:grid; place-items:center; font-size:38px}
+.welcome-icon.logo{width:96px; height:96px}
+.welcome-card h2{margin:0 0 8px; font-size:1.15rem; color:#e9f8ff}
+.welcome-card p{margin:0; color:#c6d8e5; line-height:1.6; font-size:.95rem}
+.welcome-card p + p{margin-top:8px}
+.welcome-card b{color:#ffd76b}
+.welcome-card .strong{color:#eaf9ff; font-weight:700}
+
+/* ---------- Accesos rápidos ---------- */
+.quick-access{margin:18px 0 30px}
+.quick-grid{display:flex; flex-wrap:wrap; gap:12px; width:100%}
+.quick-btn{
+  flex:1 1 180px;
+  display:flex; align-items:center; justify-content:center; gap:9px; min-height:54px; padding:12px 14px;
+  text-align:center; text-decoration:none; color:#ecf8ff; border-radius:15px;
+  background:var(--panel-grad); border:1px solid rgba(105,211,255,.22); box-shadow:0 14px 34px rgba(0,0,0,.22);
+  font-size:.9rem; font-weight:800; white-space:nowrap;
+  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease,background .18s ease
+}
+.quick-btn:hover{
+  transform:translateY(-3px); border-color:rgba(105,211,255,.48);
+  background:linear-gradient(180deg,rgba(18,54,78,.98),rgba(10,30,45,.98)); box-shadow:0 18px 40px rgba(0,0,0,.28)
+}
+
+/* ---------- Títulos ---------- */
+.section-title{margin:34px 0 16px; font-size:1.35rem; letter-spacing:.02em; scroll-margin-top:84px}
+.info-group-title{margin:22px 0 12px; color:#9fdfff; font-size:.9rem; font-weight:800; letter-spacing:.02em}
+.section-title + .info-group-title{margin-top:0}
+
+/* ---------- Tarjetas con imagen (galería) ---------- */
+.gallery{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; margin-bottom:14px}
+.gallery.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.gallery.docs{grid-template-columns:repeat(5,minmax(0,1fr))}
+.gallery.two{grid-template-columns:repeat(2,minmax(0,1fr)); margin-top:14px}
+.photo-card{
+  --img-h:220px;
+  position:relative; overflow:hidden; border-radius:20px; background:var(--panel-grad);
+  border:1px solid var(--line); box-shadow:var(--shadow); cursor:pointer; transition:.2s ease
+}
+.gallery.three .photo-card{--img-h:280px}
+.gallery.two   .photo-card{--img-h:340px}
+a.photo-card{display:block; color:inherit; text-decoration:none}
+.photo-card:hover{transform:translateY(-4px); border-color:rgba(105,211,255,.42)}
+/* La imagen llena todo su espacio (se recorta): no queda fondo de la tarjeta a la vista */
+.photo-card img{
+  width:100%; height:var(--img-h); display:block;
+  object-fit:cover; object-position:center top;
+  transition:transform .35s ease
+}
+.photo-card:hover img{transform:scale(1.03)}
+/* Capturas de documentos: el contenido está a la izquierda, con fondo vacío a la derecha */
+.photo-card.doc img{object-position:left top; background:#000}
+.video-card{padding:10px; border-radius:20px; background:var(--panel-grad); border:1px solid var(--line); box-shadow:var(--shadow); margin-bottom:14px}
+.video-card video{display:block; width:100%; max-height:75vh; border-radius:14px; background:#000}
+.section-lead{margin:-6px 0 16px; color:#c6d8e5; line-height:1.6; font-size:.95rem}
+.photo-info{position:relative; padding:14px 15px 16px; background:var(--panel-grad)}
+.photo-info h3{margin:0 0 8px; font-size:1rem}
+.photo-info p{margin:0; color:#9db4c5; font-size:.9rem; line-height:1.45}
+.order-badge{
+  display:inline-flex; align-items:center; justify-content:center; min-width:34px; height:26px; padding:0 8px; margin-bottom:9px;
+  border-radius:8px; background:linear-gradient(135deg,rgba(255,75,75,.22),rgba(255,75,75,.08));
+  border:1px solid rgba(255,75,75,.34); color:#ff8b8b; font-size:.72rem; font-weight:900; letter-spacing:.08em
+}
+
+/* ---------- Bloque de requisito ---------- */
+.req{
+  margin-top:26px; padding:22px; border-radius:22px; scroll-margin-top:84px;
+  background:linear-gradient(180deg,rgba(11,33,49,.72),rgba(7,22,34,.82));
+  border:1px solid var(--line); box-shadow:var(--shadow)
+}
+.req-head{display:flex; align-items:center; gap:12px; margin-bottom:10px}
+.req-head .order-badge{margin:0}
+.req-head h2{margin:0; font-size:clamp(1.15rem,2.4vw,1.4rem)}
+.req > p,.two-col p{margin:0 0 6px; color:#c6d8e5; line-height:1.6}
+/* Desplegable */
+.dropdown{margin-top:22px; border-radius:16px; border:1px solid var(--line); background:var(--box-grad); overflow:hidden}
+.dropdown > summary{
+  display:flex; align-items:center; gap:10px; padding:14px 16px; cursor:pointer; list-style:none;
+  color:var(--text); font-weight:800; user-select:none; transition:background .2s ease
+}
+.dropdown > summary::-webkit-details-marker{display:none}
+.dropdown > summary::after{content:"▾"; margin-left:auto; color:var(--cyan); font-size:1.1rem; transition:transform .2s ease}
+.dropdown[open] > summary::after{transform:rotate(180deg)}
+.dropdown > summary:hover{background:rgba(105,211,255,.08)}
+.dropdown[open] > summary{border-bottom:1px solid var(--line)}
+.dropdown-hint{color:var(--muted); font-size:.75rem; font-weight:700}
+.dropdown-body{padding:0 16px 16px}
+.dropdown-body > .gallery,.dropdown-body > .grid.macros{margin-top:16px; margin-bottom:0}
+.back-top{display:inline-block; margin-top:18px; color:var(--cyan); font-size:.82rem; font-weight:800; text-decoration:none}
+
+.two-col{display:grid; grid-template-columns:1fr 1fr; gap:18px; align-items:start; margin-top:10px}
+.fig{display:block; width:100%; max-height:340px; object-fit:cover; border-radius:14px; cursor:zoom-in; border:1px solid rgba(255,255,255,.08)}
+.fig-cap{margin:6px 0 0; color:#7f98aa; font-size:.78rem; text-align:center}
+.stat-img{margin-top:10px; max-height:160px}
+/* Evidencia: tarjetas 1 y 3 apiladas a la izquierda, la de la foto a la derecha ocupando el alto */
+.stats.evidence{grid-template-columns:repeat(2,minmax(0,1fr))}
+.stats.evidence .stat-photo{grid-column:2; grid-row:1 / span 2}
+.stats.evidence .stat-img{max-height:260px}
+@media(max-width:760px){
+  .stats.evidence{grid-template-columns:1fr}
+  .stats.evidence .stat-photo{grid-column:auto; grid-row:auto}
+}.stat .fig-cap{display:block}
+
+/* ---------- Tarjetas de macros / pasos ---------- */
+.grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:10px}
+.grid.stack{grid-template-columns:1fr}
+.grid.macros{grid-template-columns:repeat(5,minmax(0,1fr))}
+.card{
+  position:relative; display:block; padding:12px; border-radius:14px; overflow:hidden;
+  color:inherit; text-decoration:none; cursor:default;
+  background:var(--card-grad); border:1px solid rgba(105,211,255,.18); box-shadow:var(--shadow);
+  transition:transform .18s ease,border-color .18s ease,background .18s ease
+}
+.card:before{
+  content:""; position:absolute; inset:auto -40px -55px auto; width:105px; height:105px; border-radius:50%;
+  background:radial-gradient(circle,rgba(0,166,255,.18),transparent 68%); pointer-events:none
+}
+/* Solo las tarjetas que copian o son enlace son interactivas */
+a.card,.card[data-copy]{cursor:pointer}
+a.card:hover,.card[data-copy]:hover,.card[data-copy]:focus-visible{
+  transform:translateY(-2px); border-color:rgba(105,211,255,.46); outline:none; background:var(--card-grad-hover)
+}
+.card.compact{min-height:68px; display:flex; align-items:center; padding:10px 11px}
+/* Secuencia de macros: tras copiar una, se atenúan todas menos la siguiente */
+.grid.macros.sequence .card{opacity:.32; transition:opacity .25s ease,transform .18s ease,border-color .18s ease,box-shadow .25s ease}
+.grid.macros.sequence .card:not(.next){cursor:not-allowed}
+.grid.macros.sequence .card:not(.next):hover{transform:none}
+.grid.macros.sequence .card.blocked{animation:macro-shake .35s ease}
+@keyframes macro-shake{20%,60%{transform:translateX(-5px)}40%,80%{transform:translateX(5px)}}
+.toast.warn{background:#7a2b2b; border-color:rgba(255,120,120,.6)}
+.grid.macros.sequence .card.next{
+  opacity:1; transform:translateY(-2px); border-color:var(--cyan);
+  box-shadow:0 0 0 2px rgba(105,211,255,.35),0 12px 30px rgba(0,0,0,.35)
+}
+.section-title-row{display:flex; align-items:center; justify-content:space-between; gap:12px}
+.section-title-row .section-title{margin-bottom:16px}
+.macro-reset{
+  padding:8px 14px; border-radius:999px; cursor:pointer; font:inherit; font-size:.82rem; font-weight:800; color:#ecf8ff;
+  background:var(--panel-grad); border:1px solid rgba(105,211,255,.35)
+}
+.macro-reset:hover{border-color:rgba(105,211,255,.7)}
+.card.compact .macro-row{width:100%}
+
+.macro-row{display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:9px}
+.macro-number{
+  width:32px; height:32px; border-radius:9px; display:grid; place-items:center; font-size:.68rem; font-weight:900;
+  letter-spacing:.04em; color:#8bdfff; background:rgba(105,211,255,.09); border:1px solid rgba(105,211,255,.18)
+}
+.macro-button-title{min-width:0; font-size:.82rem; font-weight:800; line-height:1.25; color:#edf8ff}
+.macro-button-title small{display:block; color:#8fdcff; font-weight:700; font-size:.7rem; margin-bottom:2px}
+.copy-icon{color:#75ddff; font-size:14px; opacity:.62}
+.macro{margin-top:9px; color:#ccdae4; font-family:ui-monospace,Consolas,monospace; font-size:.76rem; line-height:1.45; word-break:break-word}
+.model{
+  margin:8px 0 0; padding:14px; border-radius:12px; background:#07111a; border:1px solid rgba(105,211,255,.25);
+  font-family:ui-monospace,Consolas,monospace; font-size:.84rem; line-height:1.6; color:#d7ecfa; white-space:pre-wrap
+}
+
+/* Pasos sin macro (acción dentro del juego) */
+.card.action{border-color:rgba(255,75,75,.3)}
+.card.action .macro-number{color:#ff8b8b; background:rgba(255,75,75,.1); border-color:rgba(255,75,75,.3)}
+.card.action .macro{font-family:inherit; font-size:.82rem}
+
+/* ---------- Consejos, checklist y datos ---------- */
+.tips{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:10px}
+.tip{
+  display:flex; gap:10px; align-items:flex-start; padding:12px; border-radius:14px; font-size:.88rem; line-height:1.45;
+  color:#fff4dc; background:rgba(255,197,61,.06); border:1px solid rgba(255,197,61,.28)
+}
+.tip .ico{font-size:20px}
+.tip b{color:#ffd76b}
+
+.checklist{margin:0; padding:0; list-style:none; display:grid; gap:8px}
+.checklist li{padding:10px 12px; border-radius:11px; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); font-size:.9rem; color:#d7e6f0}
+.checklist li:before{content:"✓ "; color:var(--green); font-weight:900}
+.checklist.bad li:before{content:"✗ "; color:#ff7b7b}
+
+.stats{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin:14px 0 4px}
+.stats.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.stat{padding:14px; border-radius:14px; background:var(--card-grad); border:1px solid rgba(105,211,255,.18); color:#d5e9f7; font-size:.88rem; line-height:1.5}
+.stat b{display:block; font-size:1.5rem; color:#8fd4ff; margin-bottom:4px}
+.stat.green{background:rgba(41,211,145,.08); border-color:rgba(41,211,145,.35)}
+.stat.green b{color:#5fe3ad}
+.stat.white{background:rgba(238,243,247,.07); border-color:rgba(238,243,247,.35)}
+.stat.white b{color:#fff}
+
+/* ---------- Aviso de copiado y visor de imágenes ---------- */
+.toast{
+  position:fixed; left:50%; bottom:24px; z-index:40; transform:translate(-50%,18px);
+  padding:13px 18px; border-radius:14px; background:#0c2c23; border:1px solid rgba(41,211,145,.35);
+  color:#d9fff1; box-shadow:0 18px 45px rgba(0,0,0,.35); opacity:0; pointer-events:none; transition:.25s ease; font-weight:800
+}
+.toast.show{opacity:1; transform:translate(-50%,0)}
+.lightbox{position:fixed; inset:0; background:rgba(0,0,0,.76); display:none; place-items:center; z-index:50; padding:20px}
+.lightbox.show{display:grid}
+.lightbox-inner{
+  width:min(1200px,100%); max-height:94vh; background:#09131d; border:1px solid rgba(255,255,255,.10);
+  border-radius:18px; overflow:hidden; box-shadow:0 24px 80px rgba(0,0,0,.45)
+}
+.lightbox-head{display:flex; justify-content:space-between; align-items:center; gap:12px; padding:14px 16px; border-bottom:1px solid rgba(255,255,255,.08)}
+.lightbox-head h3{margin:0; font-size:1rem}
+.close-btn{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.09); color:white; padding:9px 12px; border-radius:10px; cursor:pointer}
+.lightbox-actions{display:flex; flex-wrap:wrap; justify-content:flex-end; gap:8px}
+.lightbox-actions .close-btn{font:inherit; font-size:.85rem; font-weight:700; text-decoration:none}
+.lightbox-actions .close-btn:hover{border-color:rgba(105,211,255,.6)}
+.lightbox-body img:fullscreen{max-height:none; width:100%; height:100%; border-radius:0; background:#000}
+.lightbox-body{padding:14px}
+.lightbox-body img{width:100%; max-height:78vh; object-fit:contain; display:block; background:var(--bg); border-radius:12px}
+
+/* ---------- Pie ---------- */
+footer{text-align:center; color:#6f8a9d; margin-top:42px; font-size:.83rem}
+.footer-links{display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin-bottom:14px}
+.footer-link{
+  display:inline-flex; align-items:center; gap:8px; padding:10px 16px; border-radius:999px; text-decoration:none;
+  color:#ecf8ff; font-size:.86rem; font-weight:800;
+  background:var(--panel-grad); border:1px solid rgba(105,211,255,.3);
+  transition:transform .18s ease,border-color .18s ease
+}
+.footer-link:hover{transform:translateY(-2px); border-color:rgba(105,211,255,.6)}
+
+/* ---------- Responsive ---------- */
+@media(max-width:1000px){
+  .topbar-inner{flex-wrap:wrap}
+  .ascensos{justify-content:flex-start; margin-left:0}
+  .gallery,.gallery.three,.gallery.docs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grid.macros{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .two-col{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+  .gallery.two{grid-template-columns:1fr}
+  .grid.macros{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .stats,.stats.two{grid-template-columns:1fr}
+}
+@media(max-width:620px){
+  .wrap{padding-top:20px}
+  .hero,.hero.home{min-height:400px; padding-top:18px}
+  .topbar-inner{padding:10px 14px}
+  .brand-mini span{display:none}
+  .ascenso-btn{font-size:.7rem}
+  .quick-access{overflow-x:auto; padding-bottom:4px}
+  .quick-grid{display:flex; flex-wrap:nowrap; gap:10px; min-width:max-content}
+  .quick-btn{min-width:190px; min-height:50px; font-size:.86rem; flex:0 0 auto}
+  .gallery,.gallery.three,.gallery.docs{grid-template-columns:1fr}
+  .photo-card,.gallery.three .photo-card{--img-h:240px}
+  .gallery.two .photo-card{--img-h:280px}
+  .req{padding:18px 14px}
+  .welcome-card{grid-template-columns:1fr; padding:18px}
+  .welcome-icon.logo{width:80px; height:80px}
+  .grid{grid-template-columns:1fr}
+  .grid.macros{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:420px){
+  .grid.macros{grid-template-columns:1fr}
+  .card.compact{min-height:60px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .photo-card img{transition:none}
+  .photo-card:hover img{transform:none}
+}
+
+/* ---------- Chatbot (Botpress): burbuja más grande ---------- */
+.bpFab{width:112px !important; height:112px !important; box-shadow:0 10px 28px rgba(0,0,0,.45) !important}
+@media (min-width:768px){
+  /* el chat abierto se ubica arriba de la burbuja, que ahora es más alta */
+  .bpWebchat{bottom:152px !important; height:min(700px,calc(100% - 172px)) !important}
+}
+@media (max-width:620px){
+  .bpFab{width:84px !important; height:84px !important}
+  .bpFabWrapper{bottom:16px !important; right:16px !important}
+}
