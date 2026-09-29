@@ -89,3 +89,27 @@
   lightbox.addEventListener("click", e => { if(e.target === lightbox) closeBox(); });
   document.addEventListener("keydown", e => { if(e.key === "Escape") closeBox(); });
 })();
+
+// ---------- Chatbot (Botpress): burbuja más grande ----------
+// El webchat v3 se dibuja dentro de un shadow DOM, así que portal.css no le llega:
+// los estilos se le pasan con additionalStylesheet.
+(function(){
+  const css = `
+    .bpFab{width:112px !important; height:112px !important; box-shadow:0 10px 28px rgba(0,0,0,.45) !important}
+    @media (min-width:768px){
+      /* el chat abierto se ubica arriba de la burbuja, que ahora es más alta */
+      .bpWebchat{bottom:152px !important; height:min(700px,calc(100% - 172px)) !important}
+    }
+    @media (max-width:620px){
+      .bpFab{width:84px !important; height:84px !important}
+      .bpFabWrapper{bottom:16px !important; right:16px !important}
+    }`;
+
+  window.addEventListener("load", () => {
+    const bp = window.botpress;
+    if(!bp) return;
+    const apply = () => bp.config({ configuration: { additionalStylesheet: css } });
+    bp.on("webchat:initialized", apply);
+    apply();
+  });
+})();
