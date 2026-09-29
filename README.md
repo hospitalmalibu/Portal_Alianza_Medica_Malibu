@@ -1,5 +1,7 @@
 # Portal informativo · Facción Médica Malibu
 
+link: https://master-balm-464802-r0.web.app/
+
 Sitio web estático de la **Facción Médica Malibu** (Servicios Médicos Malibu Latam) del servidor **OneState Roleplay**. Reúne en un solo lugar lo que el personal médico necesita para trabajar y ascender:
 
 - las macros de rol, que se copian con un toque;
