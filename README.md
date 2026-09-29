@@ -8,7 +8,8 @@ Sitio web estático de la **Facción Médica Malibu** (Servicios Médicos Malibu
 - las actividades de cada rango;
 - la documentación que hay que presentar para ascender;
 - un video tutorial de RCP;
-- un chatbot que responde dudas sobre los ascensos.
+- un chatbot que responde dudas sobre los ascensos;
+- un formulario de solicitud de ascenso (página oculta, sin enlaces desde el resto del sitio).
 
 > Este documento está escrito para quien mantenga el código. Explica cómo está armado el sitio, cómo funciona cada pieza, cómo se publica y cómo hacer los cambios más comunes sin romper nada.
 
@@ -25,10 +26,9 @@ Sitio web estático de la **Facción Médica Malibu** (Servicios Médicos Malibu
 7. [rcp-mapa.html: mapa interactivo de zonas](#7-rcp-mapahtml-mapa-interactivo-de-zonas)
 8. [portal.css: estilos y sistema visual](#8-portalcss-estilos-y-sistema-visual)
 9. [Catálogo de componentes](#9-catálogo-de-componentes)
-10. [Chatbot de ascensos (Botpress)](#10-chatbot-de-ascensos-botpress)
+
 11. [Imágenes y archivos multimedia](#11-imágenes-y-archivos-multimedia)
 12. [Trabajar en local](#12-trabajar-en-local)
-13. [Publicación en Firebase Hosting](#13-publicación-en-firebase-hosting)
 14. [Tareas frecuentes paso a paso](#14-tareas-frecuentes-paso-a-paso)
 15. [Compatibilidad y accesibilidad](#15-compatibilidad-y-accesibilidad)
 16. [Problemas conocidos y deuda técnica](#16-problemas-conocidos-y-deuda-técnica)
@@ -43,7 +43,7 @@ Sitio web estático de la **Facción Médica Malibu** (Servicios Médicos Malibu
 | Build | **No hay**. No hay bundler, transpilador, `package.json` ni `node_modules`. Los archivos se publican tal cual están. |
 | JavaScript | Vanilla (ES2017+: `async/await`, arrow functions, template literals, spread, `Map`). Sin librerías. |
 | Estilos | Una única hoja compartida, `portal.css`. El mapa suma un `<style>` propio dentro de la página. |
-| Dependencias externas | Solo el chatbot: `cdn.botpress.cloud` (webchat v3.7) y `files.bpcontent.cloud` (configuración del bot). |
+
 | Tipografía | `Inter` si está instalada en el equipo; si no, la fuente del sistema. No se descarga ninguna fuente web. |
 | Hosting | Firebase Hosting, publicando la raíz del proyecto (`"public": "."`) con `cleanUrls`. |
 | Idioma | Español rioplatense (voseo) en toda la interfaz. `lang="es"` en cada página. |
@@ -64,6 +64,7 @@ Portal_Alianza_Medica_Malibu/
 ├── bata-especialista.html   Ascenso Médico general (verde) → Médico especialista (violeta)
 ├── bata-tareas.html         Actividades a desempeñar, agrupadas por rango
 ├── rcp-mapa.html            Mapa interactivo de zonas prohibidas (imagen embebida en base64)
+├── ascender.html            Formulario de solicitud de ascenso (Airtable). Página oculta: nada enlaza a ella
 ├── portal.css               Hoja de estilos compartida
 ├── portal.js                Comportamiento compartido: copiar macros y visor de imágenes
 ├── assets/                  Imágenes y video (57 archivos, ~66 MB)
@@ -95,6 +96,7 @@ Con `cleanUrls` activado, Firebase sirve cada página también sin la extensión
 | `bata-especialista.html` | Ascenso a Médico especialista | Sábado | `assets/ph-especialista.jpg` | `#requisitos`, `#req-jefe`, `#req-reuniones`, `#req-eventos`, `#req-capacitacion` |
 | `bata-tareas.html` | Actividades por bata | — | por defecto (`assets/zona-lenador.jpeg`) | `#actividades`, `#bata-marron`, `#medico-general`, `#medico-especialista` |
 | `rcp-mapa.html` | Mapa de zonas RCP | — | no tiene portada | — |
+| `ascender.html` | Solicitud de ascenso | — | por defecto (`assets/zona-lenador.jpeg`) | — |
 
 ### 3.2 Escalera de rangos y colores
 
@@ -117,6 +119,7 @@ Cada botón de ascenso de la barra superior muestra dos puntos de color unidos p
 - **Accesos rápidos** (`.quick-access`): botones debajo de la bienvenida que llevan a anclas de la misma página o a otras páginas.
 - **"↑ Volver a los requisitos"** (`.back-top`): al pie de cada bloque de requisito, vuelve a `#requisitos`.
 - **Pie** (`footer`): enlaces al Discord de OneState Latam y a la web oficial de OneState.
+- **Página oculta `ascender.html`**: tiene la barra superior como las demás, pero **ninguna página enlaza a ella** y no aparece en los accesos rápidos ni en la barra. Se entra solo con la URL directa (`/ascender`). Lleva `<meta name="robots" content="noindex, nofollow">` para que los buscadores no la listen. Si en algún momento se quiere hacer pública, hay que agregar su botón en la barra de todas las páginas (ver [§14.7](#147-cambiar-algo-de-la-barra-superior-en-todas-las-páginas)) y quitar el `noindex`.
 
 ---
 
@@ -147,10 +150,6 @@ No hay sistema de plantillas: **todas las páginas repiten el mismo esqueleto a 
 
   <div id="toast" class="toast">✓ Copiado al portapapeles</div>  <!-- lo usa portal.js -->
   <div id="lightbox" class="lightbox" aria-hidden="true"> … </div> <!-- lo usa portal.js -->
-
-  <script src="portal.js"></script>
-  <script src="https://cdn.botpress.cloud/webchat/v3.7/inject.js"></script>
-  <script src="https://files.bpcontent.cloud/…/20260928022715-4YN7U7VH.js" defer></script>
 </body>
 ```
 
@@ -166,13 +165,12 @@ No hay sistema de plantillas: **todas las páginas repiten el mismo esqueleto a 
 
 `rcp-mapa.html` no incluye `portal.js`, ni el visor ni el chatbot: es una página aparte con su propio script.
 
+`ascender.html` tampoco incluye `portal.js`, el toast, el visor ni el chatbot: solo tiene la barra, la portada, el formulario de Airtable y el pie.
+
 ### 4.2 Orden de los scripts
 
 1. **Script en línea de `index.html`** (solo en la portada): arma las tarjetas de macros **antes** de que cargue `portal.js`, que después les agrega el comportamiento de copiar.
 2. **`portal.js`**: sin `defer`, al final del `<body>`, cuando el DOM ya está completo.
-3. **`inject.js` de Botpress**: carga el widget.
-4. **Configuración del bot** (`defer`): llama a `window.botpress.init(...)`.
-
 ---
 
 ## 5. `portal.js`: comportamiento compartido
@@ -463,48 +461,6 @@ Variante `.card.action` (borde rojo): un paso que se hace en el juego y no tiene
 | `.section-lead` | Párrafo introductorio debajo de un `.section-title` |
 | `.section-title-row` | Título con un botón a la derecha (usado para "↺ Reiniciar") |
 
----
-
-## 10. Chatbot de ascensos (Botpress)
-
-### 10.1 Cómo se carga
-
-Cada página, menos el mapa, incluye:
-
-```html
-<script src="https://cdn.botpress.cloud/webchat/v3.7/inject.js"></script>
-<script src="https://files.bpcontent.cloud/2026/09/28/02/20260928022715-4YN7U7VH.js" defer></script>
-```
-
-El segundo script lo genera Botpress: llama a `window.botpress.init({...})` con el `botId`, el `clientId` y la apariencia del widget:
-
-- nombre: "Sara Bot";
-- avatar e imagen de la burbuja alojados en `files.bpcontent.cloud`;
-- color `#3276EA` y tema claro;
-- sin historial de conversación ni mensaje proactivo.
-
-**Esa configuración vive en Botpress, no en este proyecto**: para cambiar el nombre, los colores o el comportamiento del bot hay que entrar al panel de Botpress, y Botpress genera un script nuevo con **otra URL**. Esa URL nueva hay que actualizarla en las **7 páginas**.
-
-### 10.2 Burbuja más grande (overrides en `portal.css`)
-
-El widget se dibuja directamente en la página, sin iframe. Por eso sus clases se pueden pisar desde nuestro CSS:
-
-| Selector | Cambio |
-| --- | --- |
-| `.bpFab` | Burbuja de 112 × 112 px (Botpress usa 64 px), con sombra más marcada |
-| `.bpWebchat` (≥ 768 px) | Ventana del chat subida a `bottom:152px` para que no quede tapada por la burbuja |
-| `.bpFab`, `.bpFabWrapper` (≤ 620 px) | Burbuja de 84 px, más pegada a la esquina |
-
-Usan `!important` para ganarle a los estilos de Botpress. **Dependen de los nombres de clase internos de la versión 3.7.** Si se cambia la versión del script (`/webchat/v3.7/`), hay que revisar que esas clases sigan existiendo.
-
-### 10.3 Contenido del bot (`botpress/`)
-
-| Archivo | Uso en Botpress |
-| --- | --- |
-| `prompt-ascensos.md` | Instrucciones del agente: rol, tono (español, fuera de rol), prohibición de inventar datos, derivación a @Angel Riv ⚕️ y @MJA. DRA MAKY🌸, rangos, requisitos, proceso de RCP con macros, zonas, reglas MD y RP, y ejemplos |
-| `faq-ascensos.md` | Base de conocimiento en formato `### Pregunta` → respuesta |
-
-Estos archivos **no se publican** (`firebase.json` ignora `botpress/**`). Son la fuente para cargar a mano en Botpress. **Si cambiás un requisito en el sitio, también hay que cambiarlo acá y volver a cargarlo en Botpress.** Si no, el bot va a responder datos viejos.
 
 ---
 
@@ -579,58 +535,6 @@ awk '/<script>/{f=1;next}/<\/script>/{f=0}f' index.html > /tmp/idx.js && node --
 node --check portal.js
 ```
 
----
-
-## 13. Publicación en Firebase Hosting
-
-### 13.1 Configuración
-
-`.firebaserc`:
-```json
-{ "projects": { "test": "master-balm-464802-r0" } }
-```
-El proyecto de Firebase es **`master-balm-464802-r0`**, con el alias **`test`**. No hay alias `default`: si la CLI no lo selecciona sola, hay que indicarlo al publicar.
-
-`firebase.json`:
-```json
-{
-  "hosting": {
-    "public": ".",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**", "botpress/**",
-               "LEEME.txt", "README.md", "*.log",
-               "azul blanco.png", "rp.webp", "azul/zonas (2) - copia.png"],
-    "cleanUrls": true
-  }
-}
-```
-
-| Clave | Efecto |
-| --- | --- |
-| `"public": "."` | Publica **toda la carpeta del proyecto**. Cualquier archivo nuevo en la raíz o en `assets/` queda público, salvo que esté en `ignore`. |
-| `ignore` | No se publican: la configuración, los archivos ocultos (`.firebaserc`, `.firebase/`), `botpress/`, `LEEME.txt`, este `README.md` y los `.log` |
-| `cleanUrls` | Sirve `bata-azul.html` también como `/bata-azul` y redirige la versión con `.html` a la limpia |
-
-### 13.2 Publicar
-
-```bash
-npm install -g firebase-tools     # una sola vez
-firebase login                    # una sola vez
-firebase deploy --only hosting --project test
-```
-
-La CLI compara los hashes con `.firebase/hosting..cache` y **solo sube los archivos que cambiaron**. Ese archivo es caché interna: no se edita a mano, y si se borra no pasa nada (la próxima vez se vuelve a subir todo).
-
-> **Netlify**: `LEEME.txt` habla de publicar en Netlify subiendo un ZIP. Es de una etapa anterior del proyecto. Hoy el sitio se publica con Firebase.
-
-### 13.3 Antes de publicar
-
-- [ ] Abrir cada página en local y revisar la consola del navegador (F12): no debería haber errores ni imágenes 404.
-- [ ] Probar en ancho de celular (herramientas de desarrollo, ≤ 620 px).
-- [ ] Si se cambió un requisito, actualizar también `botpress/` y volver a cargarlo en Botpress.
-- [ ] Verificar que no quedaron archivos privados o de prueba en la carpeta: `"public": "."` publica todo.
-
----
-
 ## 14. Tareas frecuentes paso a paso
 
 ### 14.1 Agregar o cambiar una macro de la portada
@@ -677,15 +581,21 @@ En `bata-tareas.html`, copiar un bloque `<section class="req">` completo. Hay qu
 
 ### 14.7 Cambiar algo de la barra superior en todas las páginas
 
-La barra está copiada en 8 archivos. Conviene hacer un buscar y reemplazar en toda la carpeta (en VS Code: Ctrl+Shift+H), limitado a `*.html`, y después revisar estas diferencias:
+La barra está copiada en 9 archivos. Conviene hacer un buscar y reemplazar en toda la carpeta (en VS Code: Ctrl+Shift+H), limitado a `*.html`, y después revisar estas diferencias:
 
 - `index.html` no tiene "🏠 Inicio", y su logo es un `<div>`, no un enlace;
 - en `rcp-mapa.html` la barra está más abajo en el archivo, después del `<style>` propio de la página;
-- cada página tiene `aria-current="page"` en su propio botón.
+- cada página tiene `aria-current="page"` en su propio botón, salvo `ascender.html`, que no tiene botón propio.
 
 ### 14.8 Hacer un bloque desplegable
 
 Envolver el contenido en el fragmento de [§9](#9-catálogo-de-componentes). Si un acceso rápido apunta a esa sección, hay que abrir el desplegable por JavaScript al hacer clic (ver [§6.3](#63-desplegables-de-la-portada)). Si no, el enlace lleva a una sección cerrada.
+
+### 14.9 Cambiar el formulario de `ascender.html`
+
+El formulario es un `<iframe class="airtable-embed">` de Airtable. Para cambiarlo, en Airtable abrir el formulario → **Compartir** → **Insertar**, copiar el código y reemplazar el `<iframe>` completo dentro de la `<section class="req">`. Lo único que cambia entre un formulario y otro es el identificador de página en el `src` (`https://airtable.com/embed/appDpxPSQNOeuxuqv/<id de página>/form`); hoy es `pagBq9Xv5j0SuD1St`.
+
+Las respuestas se guardan en la base de Airtable `appDpxPSQNOeuxuqv`, no en este proyecto.
 
 ---
 
@@ -712,14 +622,10 @@ Relevados al escribir este documento. Ordenados de más a menos impacto.
 
 | # | Problema | Dónde | Sugerencia |
 | --- | --- | --- | --- |
-| 1 | **Las macros de `bata-azul.html` no se copian**, aunque la página dice "Tocá una macro para copiarla". Sus tarjetas no tienen `data-copy`. | `bata-azul.html`, sección `#req-rcp` | Agregar `data-copy="…"` con el comando a cada `.card` que no sea `.action` |
-| 2 | **El chatbot está desactualizado respecto del sitio.** Solo cubre 3 ascensos (hasta bata morada). Para bata morada pide "6 batas verdes" y el sitio dice 3 verdes + 3 blancas. Usa "bata verde = Enfermero" y en el portal el verde es Médico general. | `botpress/*.md` y panel de Botpress | Actualizar los dos `.md` con los 5 ascensos del sitio y volver a cargarlos |
-| 3 | **Faltan las actividades de Residente médico (morada)** en `bata-tareas.html` (solo están marrón, general y especialista). | `bata-tareas.html` | Cargarlas cuando estén definidas |
-| 4 | **Imágenes muy pesadas**: 66 MB en `assets/`, varias de 2–3 MB. | `assets/` | Ver [§11.2](#112-rendimiento) |
-| 5 | **20 archivos de `assets/` sin usar**, entre ellos `Mapa-Malibu.webp`, `asc-azul-morado.webp`, `foto_1.png`, `botiquin-bl.png`, `botiquin-rojo.png`, `verde1.jpg`, `tutorial-zonas.png` y `azul blanco.png` (con espacio). Se publican igual y ocupan espacio. | `assets/` | Revisarlos y borrarlos o moverlos fuera de la carpeta publicada |
-| 6 | **Entradas viejas en `ignore`**: `"azul blanco.png"`, `"rp.webp"` y `"azul/zonas (2) - copia.png"` apuntan a la raíz o a una carpeta `azul/` que ya no existe. `assets/rp.webp` **sí se usa**: no conviene "arreglar" esa regla para que lo excluya. | `firebase.json` | Borrar esas tres entradas |
-| 7 | **Sin plantillas**: la barra superior, el pie, el visor y los scripts del chatbot están repetidos en 7–8 archivos. | todas las páginas | A futuro: un generador estático simple (Eleventy, Astro) o inyectar la barra con JS |
-| 8 | **Sin control de versiones**: la carpeta no es un repositorio git. No hay historial para volver atrás. | proyecto | `git init` y un primer commit. Ignorar `.firebase/` y `*.log` |
-| 9 | **`LEEME.txt` obsoleto** (menciona Netlify y cambios de una entrega vieja). | raíz | Borrarlo o reemplazarlo por un enlace a este README |
-| 10 | El progreso del orden de macros **no se guarda** al recargar. | `index.html` | Si hace falta, guardarlo en `localStorage` dentro de `highlight()` |
-| 11 | La imagen del mapa embebida en base64 hace lenta la edición de `rcp-mapa.html`. | `rcp-mapa.html` | Pasarla a `assets/` como archivo aparte, sin cambiar su tamaño de 581×1024 |
+
+| 1 | **Imágenes muy pesadas**: 66 MB en `assets/`, varias de 2–3 MB. | `assets/` | Ver [§11.2](#112-rendimiento) |
+| 2 | **20 archivos de `assets/` sin usar**, entre ellos `Mapa-Malibu.webp`, `asc-azul-morado.webp`, `foto_1.png`, `botiquin-bl.png`, `botiquin-rojo.png`, `verde1.jpg`, `tutorial-zonas.png` y `azul blanco.png` (con espacio). Se publican igual y ocupan espacio. | `assets/` | Revisarlos y borrarlos o moverlos fuera de la carpeta publicada |
+
+| 3 | **Sin plantillas**: la barra superior, el pie, el visor y los scripts del chatbot están repetidos en 7–8 archivos. | todas las páginas | A futuro: un generador estático simple (Eleventy, Astro) o inyectar la barra con JS |
+| 4 | El progreso del orden de macros **no se guarda** al recargar. | `index.html` | Si hace falta, guardarlo en `localStorage` dentro de `highlight()` |
+| 5 | La imagen del mapa embebida en base64 hace lenta la edición de `rcp-mapa.html`. | `rcp-mapa.html` | Pasarla a `assets/` como archivo aparte, sin cambiar su tamaño de 581×1024 |
