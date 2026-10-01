@@ -70,6 +70,23 @@ body{
 .ascenso-btn.to-green {--from:rgba(160,88,43,.55);   --to:rgba(22,140,96,.55);  --ring:rgba(73,220,160,.5);  --glow:rgba(41,211,145,.4)}
 .ascenso-btn.to-violet{--from:rgba(22,140,96,.50);   --to:rgba(190,60,230,.55); --ring:rgba(226,130,255,.5); --glow:rgba(214,77,255,.4)}
 
+/* Menú desplegable de ascensos en la barra superior */
+.ascensos{align-items:center}
+.nav-menu{position:relative}
+.nav-menu > summary{list-style:none; cursor:pointer; user-select:none}
+.nav-menu > summary::-webkit-details-marker{display:none}
+.nav-caret{font-size:.7rem; transition:transform .18s ease}
+.nav-menu[open] .nav-caret{transform:rotate(180deg)}
+.nav-menu[open] > summary{border-color:rgba(105,211,255,.6)}
+.nav-menu-list{
+  position:absolute; top:calc(100% + 8px); left:0; z-index:40; min-width:250px;
+  display:flex; flex-direction:column; gap:7px; padding:10px; border-radius:16px;
+  background:rgba(6,17,28,.97); border:1px solid var(--line); box-shadow:var(--shadow)
+}
+.nav-menu-list .ascenso-btn{padding:9px 12px; font-size:.76rem}
+/* Dentro del menú el nombre del ascenso sí se ve */
+.nav-menu-list .ascenso-label{position:static; width:auto; height:auto; margin:0 0 0 4px; overflow:visible; clip:auto}
+
 .coat-dot{width:13px; height:13px; border-radius:50%; flex:0 0 auto; display:inline-block}
 .coat-dot.white {background:#f4f7fa; box-shadow:0 0 8px rgba(255,255,255,.6)}
 .coat-dot.blue  {background:#2f7df0; box-shadow:0 0 8px rgba(58,167,255,.8)}

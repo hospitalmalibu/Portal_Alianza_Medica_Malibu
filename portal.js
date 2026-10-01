@@ -37,6 +37,12 @@
     });
   });
 
+  // ---------- Menú de ascensos: se cierra al tocar fuera o con Escape ----------
+  document.querySelectorAll(".nav-menu").forEach(menu => {
+    document.addEventListener("click", e => { if(!menu.contains(e.target)) menu.open = false; });
+    document.addEventListener("keydown", e => { if(e.key === "Escape") menu.open = false; });
+  });
+
   // ---------- Visor de imágenes ----------
   if(!lightbox) return;
 
