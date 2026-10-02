@@ -48,30 +48,44 @@ body{display:flex;flex-direction:column}
 <body>
   <div class="topbar">
     <div class="topbar-inner">
-      <a class="brand-mini" href="index.html" title="Volver al portal"><div class="mark"><img src="assets/logo.png" alt="One State Medical Alliance"></div><span>Portal informativo · Facción Médica Malibu</span></a>
-      <nav class="ascensos" aria-label="Requisitos de ascenso">
-        <a class="home-btn" href="index.html" title="Volver al portal">🏠 Inicio</a>
-        <a class="home-btn" href="bata-tareas.html" title="Actividades a desempeñar por bata">📌 Actividades</a>
-        <a class="ascenso-btn to-blue" href="bata-azul.html" title="Practicante de enfermería (blanco) a Asistente de médico (azul)">
-          <span class="coat-dot white"></span><span class="coat-arrow">➜</span><span class="coat-dot blue"></span>
-          <span class="ascenso-label">Asistente de médico</span>
-        </a>
-        <a class="ascenso-btn to-purple" href="bata-morada.html" title="Asistente de médico (azul) a Residente médico (morado)">
-          <span class="coat-dot blue"></span><span class="coat-arrow">➜</span><span class="coat-dot purple"></span>
-          <span class="ascenso-label">Residente médico</span>
-        </a>
-        <a class="ascenso-btn to-brown" href="bata-cafe.html" title="Residente médico (morado) a Médico residente (marrón)">
-          <span class="coat-dot purple"></span><span class="coat-arrow">➜</span><span class="coat-dot brown"></span>
-          <span class="ascenso-label">Médico residente</span>
-        </a>
-        <a class="ascenso-btn to-green" href="bata-general.html" title="Médico residente (marrón) a Médico general">
-          <span class="coat-dot brown"></span><span class="coat-arrow">➜</span><span class="coat-dot green"></span>
-          <span class="ascenso-label">Médico general</span>
-        </a>
-        <a class="ascenso-btn to-violet" href="bata-especialista.html" title="Médico general (verde) a Médico especialista (violeta)">
-          <span class="coat-dot green"></span><span class="coat-arrow">➜</span><span class="coat-dot violet"></span>
-          <span class="ascenso-label">Médico especialista</span>
-        </a>
+      <a class="brand-mini" href="index.html" title="Volver al inicio"><div class="mark"><img src="assets/logo.png" alt="One State Medical Alliance"></div><span>Servicios Médicos Malibu</span></a>
+      <nav class="ascensos" aria-label="Navegación principal">
+        <details class="nav-menu">
+          <summary class="home-btn">📈 Ascensos <span class="nav-caret">▾</span></summary>
+          <div class="nav-menu-list">
+            <a class="ascenso-btn to-white" href="index.html#requisitos-ascenso" title="Enfermero (verde) a Practicante de enfermería (blanco)">
+              <span class="coat-dot green"></span><span class="coat-arrow">➜</span><span class="coat-dot white"></span>
+              <span class="ascenso-label">Practicante de enfermería</span>
+            </a>
+            <a class="ascenso-btn to-blue" href="bata-azul.html" title="Practicante de enfermería (blanco) a Asistente de médico (azul)">
+              <span class="coat-dot white"></span><span class="coat-arrow">➜</span><span class="coat-dot blue"></span>
+              <span class="ascenso-label">Asistente de médico</span>
+            </a>
+            <a class="ascenso-btn to-purple" href="bata-morada.html" title="Asistente de médico (azul) a Residente médico (morado)">
+              <span class="coat-dot blue"></span><span class="coat-arrow">➜</span><span class="coat-dot purple"></span>
+              <span class="ascenso-label">Residente médico</span>
+            </a>
+            <a class="ascenso-btn to-brown" href="bata-cafe.html" title="Residente médico (morado) a Médico residente (marrón)">
+              <span class="coat-dot purple"></span><span class="coat-arrow">➜</span><span class="coat-dot brown"></span>
+              <span class="ascenso-label">Médico residente</span>
+            </a>
+            <a class="ascenso-btn to-green" href="bata-general.html" title="Médico residente (marrón) a Médico general">
+              <span class="coat-dot brown"></span><span class="coat-arrow">➜</span><span class="coat-dot green"></span>
+              <span class="ascenso-label">Médico general</span>
+            </a>
+            <a class="ascenso-btn to-violet" href="bata-especialista.html" title="Médico general (verde) a Médico especialista (violeta)">
+              <span class="coat-dot green"></span><span class="coat-arrow">➜</span><span class="coat-dot violet"></span>
+              <span class="ascenso-label">Médico especialista</span>
+            </a>
+          </div>
+        </details>
+        <details class="nav-menu end">
+          <summary class="home-btn">➕ Más <span class="nav-caret">▾</span></summary>
+          <div class="nav-menu-list">
+            <a class="nav-link" href="https://discord.gg/onestate-latam" target="_blank" rel="noopener">💬 Discord</a>
+            <a class="nav-link" href="https://onestate.com" target="_blank" rel="noopener">🌐 Web oficial</a>
+          </div>
+        </details>
       </nav>
     </div>
   </div>
@@ -98,10 +112,6 @@ body{display:flex;flex-direction:column}
   </div>
 </div>
 <p class="map-hint">🔴 Zona prohibida · 🟢 Se puede hacer RCP<br>🔍 Zoom con la rueda del mouse, pellizcando o con los botones + / − · Arrastrá para moverte</p>
-<div class="footer-links">
-  <a class="footer-link" href="https://discord.gg/onestate-latam" target="_blank" rel="noopener">💬 Discord OneState Latam</a>
-  <a class="footer-link" href="https://onestate.com" target="_blank" rel="noopener">🌐 Web oficial de OneState</a>
-</div>
 <script>
 const W=581,H=1024;
 const T={
@@ -236,5 +246,6 @@ function check(e){
   else{sign.style.top='auto';sign.style.bottom=`calc(${(1-vy)*100}% + 16px)`;}
 }
 </script>
+<script src="portal.js"></script>
 </body>
 </html>

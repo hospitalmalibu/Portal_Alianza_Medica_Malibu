@@ -10,11 +10,15 @@
 <body>
   <div class="topbar">
     <div class="topbar-inner">
-      <div class="brand-mini"><div class="mark"><img src="assets/logo.png" alt="One State Medical Alliance"></div><span>Portal informativo · Facción Médica Malibu</span></div>
+      <div class="brand-mini"><div class="mark"><img src="assets/logo.png" alt="One State Medical Alliance"></div><span>Servicios Médicos Malibu</span></div>
       <nav class="ascensos" aria-label="Navegación principal">
         <details class="nav-menu">
           <summary class="home-btn">📈 Ascensos <span class="nav-caret">▾</span></summary>
           <div class="nav-menu-list">
+        <a class="ascenso-btn to-white" href="#requisitos-ascenso" title="Enfermero (verde) a Practicante de enfermería (blanco)">
+          <span class="coat-dot green"></span><span class="coat-arrow">➜</span><span class="coat-dot white"></span>
+          <span class="ascenso-label">Practicante de enfermería</span>
+        </a>
         <a class="ascenso-btn to-blue" href="bata-azul.html" title="Practicante de enfermería (blanco) a Asistente de médico (azul)">
           <span class="coat-dot white"></span><span class="coat-arrow">➜</span><span class="coat-dot blue"></span>
           <span class="ascenso-label">Asistente de médico</span>
@@ -37,83 +41,104 @@
         </a>
           </div>
         </details>
-        <a class="home-btn" href="bata-tareas.html" title="Actividades a desempeñar por bata">📌 Actividades</a>
-        <a class="home-btn" href="https://discord.gg/onestate-latam" target="_blank" rel="noopener">💬 Discord</a>
-        <a class="home-btn" href="https://onestate.com" target="_blank" rel="noopener">🌐 Web oficial</a>
+        <details class="nav-menu end">
+          <summary class="home-btn">➕ Más <span class="nav-caret">▾</span></summary>
+          <div class="nav-menu-list">
+            <a class="nav-link" href="https://discord.gg/onestate-latam" target="_blank" rel="noopener">💬 Discord</a>
+            <a class="nav-link" href="https://onestate.com" target="_blank" rel="noopener">🌐 Web oficial</a>
+            <!-- Redes ocultas hasta tener los usuarios reales: reemplazar "usuario" / el número y sacar este comentario
+            <a class="nav-link" href="https://www.instagram.com/usuario" target="_blank" rel="noopener">📸 Instagram</a>
+            <a class="nav-link" href="https://www.facebook.com/usuario" target="_blank" rel="noopener">📘 Facebook</a>
+            <a class="nav-link" href="https://www.tiktok.com/@usuario" target="_blank" rel="noopener">🎵 TikTok</a>
+            <a class="nav-link" href="https://wa.me/5491100000000" target="_blank" rel="noopener">🟢 WhatsApp</a>
+            -->
+          </div>
+        </details>
       </nav>
     </div>
   </div>
 
   <main class="wrap">
     <section class="hero home">
-      <h1><span class="accent">Portal informativo de la Facción Médica Malibu</span></h1>
-      <p class="sub">Servicios Médicos Malibu Latam</p>
-      <p class="hint">🔽 Seguí deslizando </p>
+     <h1><span class="accent">Centro de Formación Médica Malibu</span></h1>
+<p class="sub">Macros, normas, ascensos y protocolos en un solo lugar</p>
+<p class="hint">🔽 Seguí deslizando</p>
+
     </section>
 
     <section id="bienvenida" class="welcome-card">
       <div class="welcome-icon logo"><img src="assets/logo.png" alt="One State Medical Alliance"></div>
       <div>
         <h2>¡Bienvenido a la Facción Médica Malibu!</h2>
-        <p>Nos alegra tenerte con nosotros. Aquí valoramos el respeto, el compañerismo, el aprendizaje y la vocación de servicio.</p>
-        <p class="strong">Esperamos que disfrutes esta nueva etapa, aprendas junto al equipo y sigas creciendo dentro del hospital. ¡Bienvenido a la familia médica!</p>
-        <p class="hint">🔽 Más abajo encontrarás todo lo que un bata verde necesita (macros, tutoriales y más).</p>
+        <p>Nos alegra tenerte en el equipo. Acá valoramos el respeto, el compañerismo, el aprendizaje y la vocación de servicio.</p>
+        <p class="strong">Que disfrutes esta nueva etapa y sigas creciendo con nosotros dentro del hospital.</p>
       </div>
     </section>
+
+    <div class="macro-help after">
+      <p>Este portal reúne los procesos de la facción, pero <b>no reemplaza al entrenador médico</b>. ¿Todavía no tenés uno? Acercate a alguno o avisale a cualquier integrante.</p>
+    </div>
 
     <section id="accesos-rapidos" class="quick-access">
       <div class="quick-grid">
         <a class="quick-btn" href="#macros">🧾 <span>Macros</span></a>
         <a class="quick-btn" href="rcp-mapa.html">🚫 <span>Zonas prohibidas</span></a>
         <a class="quick-btn" href="#normas-generales">📋 <span>Normas generales</span></a>
+        <a class="quick-btn" href="#eventos">🏅 <span>Eventos</span></a>
         <a class="quick-btn" href="#requisitos-ascenso">📈 <span>Requisitos de ascenso</span></a>
-        
         <a class="quick-btn" href="#tutorial-rcp">🎥 <span>Tutorial</span></a>
       </div>
     </section>
 
     <div class="section-title-row">
-      <h2 id="macros" class="section-title">🧾 Macros médicas</h2>
+      <h2 id="macros" class="section-title brand">Macros médicas</h2>
       <button type="button" id="macroReset" class="macro-reset" hidden>↺ Reiniciar</button>
     </div>
-    <section id="macro-grid" class="grid macros"></section>
+    <div class="macro-help">
+      <p>Antes de cargarlas, <b>borrá las macros que tengas</b>.</p>
+      <p><a class="zoom-link" href="assets/tutorial-macro.png" data-title="Tutorial: cómo agregar las macros">Ver tutorial para agregarlas</a></p>
+      <p>Cuando termines, <b>buscá a un entrenador</b>.</p>
+    </div>
 
-    <h2 id="galeria" class="section-title">Información importante</h2>
-    <div class="info-group-title" id="zonas-y-mapa">Todo lo que necesita un enfermero (bata verde).</div>
+    <section id="macro-grid" class="grid macros"></section>
+    <div class="macro-help after">
+      <details class="macro-more">
+        <summary>Desplegá para ver más info de las macros</summary>
+      <p>Al pegar las dos últimas (19 y 20), <b>reemplazá los datos entre paréntesis</b> por tu nombre en el juego, tu rango médico (los bata verde son <i>Enfermero</i>) y tu usuario de Discord. <a class="zoom-link" href="assets/discord2.png" data-title="¿Dónde veo mi usuario de Discord?">¿Dónde veo mi usuario?</a> ¿No tenés Discord? <a href="https://discord.com/register" target="_blank" rel="noopener">Creá tu cuenta acá</a>.</p>
+      <p>Ejemplo: bata verde llamado Pepito, con usuario de Discord <i>usuario</i>:</p>
+      <pre>/me Hola mi nombre es Pepito, Enfermero de Servicios Médicos Malibu Latam.
+/n mi Discord: usuario</pre>
+      <p>La macro de presentación (<i>/me Hola mi nombre es…</i>) sirve para saludar: cuando te cruces con alguien de otra facción, usala junto con el <b>gesto de saludo militar</b>.</p>
+      </details>
+    </div>
+
+    <h2 id="galeria" class="section-title brand">Información importante</h2>
+    <div class="info-group-title" id="zonas-y-mapa">Guía rápida para el enfermero (bata verde).</div>
      
-      <section class="gallery three"><article id="macros-imagen" class="photo-card zoom" data-title="Macros médicas" data-image="assets/tutorial-macro.png">
-        <img src="assets/tutorial-macro.png" alt="Macros médicas">
-        <div class="photo-info">
-          <div class="order-badge">01</div>
-          <h3>🧾 Macros</h3>
-          <p>Tutorial para que puedas agregar  las macros de la facción.</p>
-        </div>
-      </article>
+    <section class="gallery three">
       <article id="zonas-prohibidas" class="photo-card zoom" data-title="Zonas prohibidas" data-image="assets/zonas.png">
         <img src="assets/zonas.png" alt="Zonas prohibidas">
         <div class="photo-info">
-          <div class="order-badge">02</div>
-          <h3>Zonas prohibidas</h3>
-          <p>Consulta las zonas donde no debe realizarse RCP.</p>
+          <div class="order-badge">01</div>
+          <h3>🚫 Zonas prohibidas</h3>
+          <p>Consultá las zonas donde no debe realizarse RCP.</p>
         </div>
       </article>
 
       <a id="mapa-zonas" class="photo-card" href="rcp-mapa.html">
         <img src="assets/pre-mapa.webp" alt="Mapa de zonas prohibidas">
         <div class="photo-info">
-          <div class="order-badge">03</div>
-          <h3>Mapa de zonas prohibidas</h3>
-          <p>Ingresa al mapa para descubrir si podés hacer RCP en cada punto de la ciudad.</p>
+          <div class="order-badge">02</div>
+          <h3>🗺️ Mapa de zonas prohibidas</h3>
+          <p>Ingresá al mapa para descubrir si podés hacer RCP en cada punto de la ciudad.</p>
         </div>
       </a>
-
-      
 
       <article id="normas-generales" class="photo-card zoom" data-title="Normas generales del hospital" data-image="assets/reglas-normas_generales.webp">
         <img src="assets/reglas-normas_generales.webp" alt="Normas generales del hospital">
         <div class="photo-info">
-          <div class="order-badge">04</div>
-          <h3>Normas generales del hospital</h3>
+          <div class="order-badge">03</div>
+          <h3>📋 Normas generales del hospital</h3>
           <p>Comportamiento y convivencia dentro del hospital.</p>
         </div>
       </article>
@@ -121,24 +146,41 @@
       <article id="reglas-mostrador" class="photo-card zoom" data-title="Reglas detrás del mostrador y atención al paciente" data-image="assets/reglas_piso1.webp">
         <img src="assets/reglas_piso1.webp" alt="Reglas detrás del mostrador y atención al paciente">
         <div class="photo-info">
-          <div class="order-badge">05</div>
-          <h3>Atención al paciente y conducta profesional.</h3>
-          <p>Reglas de mostrador y atención del hospital.</p>
+          <div class="order-badge">04</div>
+          <h3>🩺 Reglas de mostrador y atención</h3>
+          <p>Atención al paciente y conducta profesional.</p>
         </div>
-      </article><article id="requisitos-ascenso" class="photo-card zoom" data-title="Requisitos de ascenso" data-image="assets/asc-verde-blanco.png">
+      </article>
+
+      <article id="evidencia-rcp" class="photo-card zoom" data-title="Evidencia de un RCP" data-image="assets/evid-rcp-verde.jpg">
+        <img src="assets/evid-rcp-verde.jpg" alt="Evidencia de un RCP">
+        <div class="photo-info">
+          <div class="order-badge">05</div>
+          <h3>🫀 RCP</h3>
+          <p>Evidencia de un RCP: ponete en contacto con un entrenador y pedile que te saque una captura para tu ascenso. Deben verse los dos.</p>
+        </div>
+      </article>
+
+      <article id="requisitos-ascenso" class="photo-card zoom" data-title="Requisitos de ascenso" data-image="assets/asc-verde-blanco.png">
         <img src="assets/asc-verde-blanco.png" alt="Requisitos de ascenso">
         <div class="photo-info">
           <div class="order-badge">06</div>
-          <h3>Requisitos de ascenso</h3>
+          <h3>📈 Requisitos de ascenso</h3>
           <p>Ver los requisitos para avanzar a practicante de enfermería (bata blanca).</p>
         </div>
       </article>
 
     </section>
 
-    
+    <div id="eventos" class="macro-help after highlight">
+      <p><b>No olvides tu barra de experiencia</b></p><p>🏅 Todos los días hay <b>eventos que suman medallas y capacitaciones</b> que te ayudan a formarte mejor. ¡Sumate!</p>
+    </div>
 
-    <h2 id="tutorial-rcp" class="section-title"> [PENDIENTE]🎥 Tutorial de RCP</h2>
+    <h2 id="tutorial-rcp" class="section-title brand">Tutorial de RCP</h2>
+    <div class="macro-help important">
+      <p>🚑 <b>Nunca salgas a hacer RCP solo</b>: siempre tiene que acompañarte un entrenador, el que esté disponible.</p>
+      <p>Y <b>nunca en auto particular</b>: siempre en un vehículo de la facción.</p>
+    </div>
     <div class="video-card">
       <!-- El .mov está en H.264: declarado como mp4 lo reproducen Chrome, Edge, Firefox y Safari -->
       <video controls playsinline preload="metadata">
