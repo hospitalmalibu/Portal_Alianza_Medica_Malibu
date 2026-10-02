@@ -75,7 +75,8 @@ Portal_Alianza_Medica_Malibu/
 ├── .firebaserc              Proyecto de Firebase asociado
 ├── .firebase/               Caché de la CLI de Firebase (hashes de archivos publicados)
 ├── LEEME.txt                Nota vieja de una entrega anterior (menciona Netlify). Obsoleta.
-└── README.md                Este documento
+├── README.md                Este documento
+└── PROMPT-portal.md         Prompt para recrear el sitio completo con una IA. NO se publica.
 ```
 
 ---
