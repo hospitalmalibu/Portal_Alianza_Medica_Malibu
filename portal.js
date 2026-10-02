@@ -1,6 +1,6 @@
 // Comportamiento compartido de todas las páginas del portal:
 //  - [data-copy]: la tarjeta copia su texto al portapapeles.
-//  - .photo-card.zoom / img.fig: la imagen se abre en grande en el visor.
+//  - .photo-card.zoom / img.fig / a.zoom-link: la imagen se abre en grande en el visor.
 (function(){
   const $ = id => document.getElementById(id);
   const toast = $("toast");
@@ -42,6 +42,31 @@
     document.addEventListener("click", e => { if(!menu.contains(e.target)) menu.open = false; });
     document.addEventListener("keydown", e => { if(e.key === "Escape") menu.open = false; });
   });
+
+  // ---------- Requisitos en ventana: la tarjeta que apunta a una .req.popup la abre encima ----------
+  const popups = document.querySelectorAll(".req.popup");
+  if(popups.length){
+    const modal = document.createElement("div");
+    modal.className = "detail-modal";
+    document.body.appendChild(modal);
+    const closeDetail = () => modal.classList.remove("show");
+    popups.forEach(sec => {
+      const close = document.createElement("button");
+      close.type = "button";
+      close.className = "close-btn detail-close";
+      close.textContent = "Cerrar";
+      close.addEventListener("click", closeDetail);
+      sec.prepend(close);
+      document.querySelectorAll(`a[href="#${sec.id}"]`).forEach(a => a.addEventListener("click", e => {
+        e.preventDefault();
+        modal.replaceChildren(sec);
+        sec.scrollTop = 0;
+        modal.classList.add("show");
+      }));
+    });
+    modal.addEventListener("click", e => { if(e.target === modal) closeDetail(); });
+    document.addEventListener("keydown", e => { if(e.key === "Escape") closeDetail(); });
+  }
 
   // ---------- Visor de imágenes ----------
   if(!lightbox) return;
@@ -86,6 +111,9 @@
     card.addEventListener("keydown", e => {
       if(e.key === "Enter" || e.key === " "){ e.preventDefault(); open(); }
     });
+  });
+  document.querySelectorAll("a.zoom-link").forEach(link => {
+    link.addEventListener("click", e => { e.preventDefault(); openBox(link.dataset.title, link.getAttribute("href")); });
   });
   document.querySelectorAll("img.fig").forEach(img => {
     img.addEventListener("click", () => openBox(img.alt, img.getAttribute("src")));
