@@ -4,7 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Mapa de zonas RCP · Facción Médica Malibu</title>
-<meta name="theme-color" content="#07131f">
+<meta name="theme-color" content="#10273b">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" />
 <link rel="stylesheet" href="portal.css">
 <style>
 :root{--no:#ff4b4b;--yes:#29d391}
@@ -50,7 +53,8 @@ body{display:flex;flex-direction:column}
     <div class="topbar-inner">
       <a class="brand-mini" href="index.html" title="Volver al inicio"><div class="mark"><img src="assets/logo.png" alt="One State Medical Alliance"></div><span>Servicios Médicos Malibu</span></a>
       <nav class="ascensos" aria-label="Navegación principal">
-        <a class="home-btn" href="index.html" title="Volver al inicio">🏠 Inicio</a>
+        <a class="home-btn" href="index.html" title="Volver al inicio">🏠 Inicio</a>        <a class="home-btn" href="https://malibu-med-cronograma.vercel.app/" target="_blank" rel="noopener">📅 Cronograma</a>
+
         <details class="nav-menu">
           <summary class="home-btn">📈 Ascensos <span class="nav-caret">▾</span></summary>
           <div class="nav-menu-list">
@@ -80,6 +84,7 @@ body{display:flex;flex-direction:column}
             </a>
           </div>
         </details>
+        <a class="home-btn" href="https://malibu-med-cronograma.vercel.app/" target="_blank" rel="noopener">📅 Cronograma</a>
         <details class="nav-menu end">
           <summary class="home-btn">➕ Más <span class="nav-caret">▾</span></summary>
           <div class="nav-menu-list">
@@ -116,9 +121,9 @@ body{display:flex;flex-direction:column}
 <script>
 const W=581,H=1024;
 const T={
-    iglesia:["Iglesia","No se puede hacer RCP en la iglesia."],
+  iglesia:["Iglesia","No se puede hacer RCP en la iglesia."],
 
-  militar:["Base  militar","Es una facción, así que no se puede hacer RCP."],
+  militar:["Base militar","Es una facción, así que no se puede hacer RCP."],
   hospital:["Hospital","Es una facción, así que no se puede hacer RCP."],
   comisaria:["Comisaría","En las facciones está prohibido atacar, así que no se debería reanimar heridos."],
   ak:["AK","Suele haber enfrentamientos por toma de territorio."],

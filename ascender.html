@@ -3,37 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#07131f" />
+  <meta name="theme-color" content="#10273b" />
   <meta name="robots" content="noindex, nofollow" />
   <title>Ascender · Facción Médica Malibu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" />
   <link rel="stylesheet" href="portal.css" />
 </head>
 <body>
   <div class="topbar">
     <div class="topbar-inner">
       <a class="brand-mini" href="index.html" title="Volver al portal"><div class="mark"><img src="assets/logo.png" alt="One State Medical Alliance"></div><span>Portal informativo · Facción Médica Malibu</span></a>
-      <nav class="ascensos" aria-label="Requisitos de ascenso">
-        <a class="home-btn" href="index.html" title="Volver al portal">🏠 Inicio</a>
-        <a class="ascenso-btn to-blue" href="bata-azul.html" title="Practicante de enfermería (blanco) a Asistente de médico (azul)">
-          <span class="coat-dot white"></span><span class="coat-arrow">➜</span><span class="coat-dot blue"></span>
-          <span class="ascenso-label">Asistente de médico</span>
-        </a>
-        <a class="ascenso-btn to-purple" href="bata-morada.html" title="Asistente de médico (azul) a Residente médico (morado)">
-          <span class="coat-dot blue"></span><span class="coat-arrow">➜</span><span class="coat-dot purple"></span>
-          <span class="ascenso-label">Residente médico</span>
-        </a>
-        <a class="ascenso-btn to-brown" href="bata-cafe.html" title="Residente médico (morado) a Médico residente (marrón)">
-          <span class="coat-dot purple"></span><span class="coat-arrow">➜</span><span class="coat-dot brown"></span>
-          <span class="ascenso-label">Médico residente</span>
-        </a>
-        <a class="ascenso-btn to-green" href="bata-general.html" title="Médico residente (marrón) a Médico general">
-          <span class="coat-dot brown"></span><span class="coat-arrow">➜</span><span class="coat-dot green"></span>
-          <span class="ascenso-label">Médico general</span>
-        </a>
-        <a class="ascenso-btn to-violet" href="bata-especialista.html" title="Médico general (verde) a Médico especialista (violeta)">
-          <span class="coat-dot green"></span><span class="coat-arrow">➜</span><span class="coat-dot violet"></span>
-          <span class="ascenso-label">Médico especialista</span>
-        </a>
+      <nav class="ascensos" aria-label="Navegación principal">
+        <a class="home-btn" href="index.html" title="Volver al inicio">🏠 Inicio</a>
+        <details class="nav-menu">
+          <summary class="home-btn">📈 Ascensos <span class="nav-caret">▾</span></summary>
+          <div class="nav-menu-list">
+            <a class="ascenso-btn to-white" href="bata-blanca.html" title="Enfermero (verde) a Practicante de enfermería (blanco)">
+              <span class="coat-dot green"></span><span class="coat-arrow">➜</span><span class="coat-dot white"></span>
+              <span class="ascenso-label">Practicante de enfermería</span>
+            </a>
+            <a class="ascenso-btn to-blue" href="bata-azul.html" title="Practicante de enfermería (blanco) a Asistente de médico (azul)">
+              <span class="coat-dot white"></span><span class="coat-arrow">➜</span><span class="coat-dot blue"></span>
+              <span class="ascenso-label">Asistente de médico</span>
+            </a>
+            <a class="ascenso-btn to-purple" href="bata-morada.html" title="Asistente de médico (azul) a Residente médico (morado)">
+              <span class="coat-dot blue"></span><span class="coat-arrow">➜</span><span class="coat-dot purple"></span>
+              <span class="ascenso-label">Residente médico</span>
+            </a>
+            <a class="ascenso-btn to-brown" href="bata-cafe.html" title="Residente médico (morado) a Médico residente (marrón)">
+              <span class="coat-dot purple"></span><span class="coat-arrow">➜</span><span class="coat-dot brown"></span>
+              <span class="ascenso-label">Médico residente</span>
+            </a>
+            <a class="ascenso-btn to-green" href="bata-general.html" title="Médico residente (marrón) a Médico general">
+              <span class="coat-dot brown"></span><span class="coat-arrow">➜</span><span class="coat-dot green"></span>
+              <span class="ascenso-label">Médico general</span>
+            </a>
+            <a class="ascenso-btn to-violet" href="bata-especialista.html" title="Médico general (verde) a Médico especialista (violeta)">
+              <span class="coat-dot green"></span><span class="coat-arrow">➜</span><span class="coat-dot violet"></span>
+              <span class="ascenso-label">Médico especialista</span>
+            </a>
+          </div>
+        </details>
+        <a class="home-btn" href="https://malibu-med-cronograma.vercel.app/" target="_blank" rel="noopener">📅 Cronograma</a>
+        <details class="nav-menu end">
+          <summary class="home-btn">➕ Más <span class="nav-caret">▾</span></summary>
+          <div class="nav-menu-list">
+            <a class="nav-link" href="https://discord.gg/onestate-latam" target="_blank" rel="noopener">💬 Discord</a>
+            <a class="nav-link" href="https://onestate.com" target="_blank" rel="noopener">🌐 Web oficial</a>
+          </div>
+        </details>
       </nav>
     </div>
   </div>
@@ -49,12 +69,42 @@
       <iframe class="airtable-embed" src="https://airtable.com/embed/appDpxPSQNOeuxuqv/pagBq9Xv5j0SuD1St/form" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
     </section>
 
-    <footer>
-      <div class="footer-links">
-        <a class="footer-link" href="https://discord.gg/onestate-latam" target="_blank" rel="noopener">💬 Discord OneState Latam</a>
-        <a class="footer-link" href="https://onestate.com" target="_blank" rel="noopener">🌐 Web oficial de OneState</a>
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="">
+          <div>
+            <strong>Servicios Médicos Malibu</strong>
+            <span>Centro de Formación Médica · OneState Roleplay</span>
+          </div>
+        </div>
+        <nav class="footer-cols" aria-label="Enlaces del pie">
+          <div class="footer-col">
+            <h4>Portal</h4>
+            <a href="index.html">🏠 Inicio</a>
+            <a href="bata-blanca.html#macros">🧾 Macros</a>
+            <a href="index.html#el-portal">🧭 Sobre el portal</a>
+          </div>
+          <div class="footer-col">
+            <h4>Ascensos</h4>
+            <a href="bata-blanca.html"><span class="coat-dot white"></span>Practicante de enfermería</a>
+            <a href="bata-azul.html"><span class="coat-dot blue"></span>Asistente de médico</a>
+            <a href="bata-morada.html"><span class="coat-dot purple"></span>Residente médico</a>
+            <a href="bata-cafe.html"><span class="coat-dot brown"></span>Médico residente</a>
+            <a href="bata-general.html"><span class="coat-dot green"></span>Médico general</a>
+            <a href="bata-especialista.html"><span class="coat-dot violet"></span>Médico especialista</a>
+          </div>
+          <div class="footer-col">
+            <h4>Comunidad</h4>
+            <a href="https://discord.gg/onestate-latam" target="_blank" rel="noopener">💬 Discord OneState Latam</a>
+            <a href="https://onestate.com" target="_blank" rel="noopener">🌐 Web oficial de OneState</a>
+          </div>
+        </nav>
       </div>
-      Portal informativo · Facción Médica Malibu · OneState Roleplay
+      <div class="footer-bottom">
+        <span>Portal informativo · Facción Médica Malibu · OneState Roleplay</span>
+        <a class="footer-up" href="#">↑ Volver arriba</a>
+      </div>
     </footer>
   </main>
 </body>

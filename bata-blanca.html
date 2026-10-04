@@ -3,16 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#07131f" />
+  <meta name="theme-color" content="#0f3a28" />
   <title>Ascenso a Practicante de enfermería · Facción Médica Malibu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" />
   <link rel="stylesheet" href="portal.css" />
 </head>
-<body>
+<body class="page-blanca">
   <div class="topbar">
     <div class="topbar-inner">
       <a class="brand-mini" href="index.html" title="Volver al inicio"><div class="mark"><img src="assets/logo.png" alt="One State Medical Alliance"></div><span>Servicios Médicos Malibu</span></a>
       <nav class="ascensos" aria-label="Navegación principal">
-        <a class="home-btn" href="index.html" title="Volver al inicio">🏠 Inicio</a>
+        <a class="home-btn" href="index.html" title="Volver al inicio">🏠 Inicio</a>      <a class="home-btn" href="https://malibu-med-cronograma.vercel.app/" target="_blank" rel="noopener">📅 Capacitaciones </a>
+
         <details class="nav-menu">
           <summary class="home-btn">📈 Ascensos <span class="nav-caret">▾</span></summary>
           <div class="nav-menu-list">
@@ -42,6 +46,7 @@
             </a>
           </div>
         </details>
+        
         <details class="nav-menu end">
           <summary class="home-btn">➕ Más <span class="nav-caret">▾</span></summary>
           <div class="nav-menu-list">
@@ -54,33 +59,86 @@
   </div>
 
   <main class="wrap">
-    <section class="hero" style="--hero-img:url('assets/ph-verde.jpg')">
-      <span class="eyebrow"><span class="coat-dot green"></span> ASCENSO <span class="coat-dot white"></span></span>
-      <h1><span class="accent">Enfermero<br>a Practicante de enfermería</span></h1>
-      <p class="sub">Misma pasión · Mayor responsabilidad</p>
-      <p class="hint">🔽 Seguí deslizando</p>
-    </section>
+    <div class="home-intro">
+      <section class="hero" style="--hero-img:url('assets/portada-verde-blanca.jpg')">
+        <span class="eyebrow"><span class="coat-dot green"></span> ASCENSO <span class="coat-dot white"></span></span>
+        <h1><span class="accent">Enfermero<br>a Practicante de enfermería</span></h1>
+        <p class="sub">Misma pasión · Mayor responsabilidad</p>
+      </section>
 
-    <section id="bienvenida" class="welcome-card">
-      <div class="welcome-icon logo"><img src="assets/logo.png" alt="One State Medical Alliance"></div>
-      <div>
-        <h2>¡Bienvenido a la Facción Médica Malibu!</h2>
-        <p>Nos alegra tenerte en el equipo. Acá valoramos el respeto, el compañerismo, el aprendizaje y la vocación de servicio.</p>
-        <p class="strong">Que disfrutes esta nueva etapa y sigas creciendo con nosotros dentro del hospital.</p>
+      <section id="bienvenida" class="welcome-card">
+        <div class="welcome-icon logo"><img src="assets/logo.png" alt="One State Medical Alliance"></div>
+        <div>
+          <h2>¡Bienvenido a la Facción Médica Malibu!</h2>
+          <p>Nos alegra tenerte en el equipo. Acá valoramos el respeto, el compañerismo, el aprendizaje y la vocación de servicio.</p>
+          <p class="strong">Que disfrutes esta nueva etapa y sigas creciendo con nosotros dentro del hospital.</p>
+       <p>— Angel Riv</p> </div>
+      </section>
+    </div>
+ <div class="section-title-row">
+      <h2 id="macros" class="section-title brand">Macros médicas</h2>
+      <button type="button" id="macroReset" class="macro-reset" hidden>↺ Reiniciar</button>
+    </div>
+    <details class="macro-guide">
+      <summary>
+        <span class="guide-ico" aria-hidden="true"><img src="assets/ico-macro.png" alt=""></span>
+        <span class="guide-head">
+          <span class="guide-title">Cómo cargar las macros</span>
+          <span class="guide-chips">
+            <span class="guide-chip"><b>1</b> Borrá las tuyas</span>
+            <span class="guide-chip"><b>2</b> Copialas en orden</span>
+            <span class="guide-chip"><b>3</b> Buscá un entrenador</span>
+          </span>
+        </span>
+        <span class="guide-toggle">Ver guía</span>
+      </summary>
+      <div class="guide-body">
+        <div class="guide-step">
+          <span class="step-n">1</span>
+          <div>
+            <h3>Borrá tus macros</h3>
+            <p>Antes de cargarlas, <b>borrá las macros que tengas</b>.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="step-n">2</span>
+          <div>
+            <h3>Copialas en orden</h3>
+            <p>Tocá cada macro en orden para copiarla y pegala en el juego. <a class="zoom-link" href="assets/tutorial-macro.png" data-title="Tutorial: cómo agregar las macros">Ver tutorial para agregarlas</a></p>
+            <p>Al pegar las dos últimas (19 y 20), <b>reemplazá los datos entre paréntesis</b> por tu nombre en el juego, tu rango médico (los bata verde son <i>Enfermero</i>) y tu usuario de Discord. <a class="zoom-link" href="assets/discord2.png" data-title="¿Dónde veo mi usuario de Discord?">¿Dónde veo mi usuario?</a> <b>Tener Discord es obligatorio</b>: si todavía no tenés cuenta, <a href="https://discord.com/register" target="_blank" rel="noopener">creala acá</a>.</p>
+            <p>Ejemplo para un bata verde llamado Pepito, con usuario de Discord <i>usuario</i>:</p>
+            <pre>/me Hola, mi nombre es Pepito, Enfermero de Servicios Médicos Malibu Latam.
+/n mi Discord: usuario</pre>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="step-n">3</span>
+          <div>
+            <h3>Buscá a un entrenador</h3>
+            <p>Cuando termines, <b>buscá a un entrenador</b>. ¿Todavía no tenés uno? Acercate a alguno o avisale a cualquier integrante.</p>
+          </div>
+        </div>
+        <p class="guide-tip">💡 La macro de presentación (<i>/me Hola, mi nombre es…</i>) sirve para saludar: cuando te cruces con alguien de otra facción, usala junto con el <b>gesto de saludo militar</b>.</p>
       </div>
-    </section>
+    </details>
 
+    <div class="macro-progress">
+      <div class="macro-progress-bar"><span id="macroBar"></span></div>
+      <span id="macroCount" aria-live="polite">0 / 20 copiadas</span>
+    </div>
+
+    <section id="macro-grid" class="grid macros"></section>
     <h2 id="galeria" class="section-title brand">Información importante</h2>
-    <div class="info-group-title" id="zonas-y-mapa">Guía rápida para el enfermero (bata verde).</div>
+    <div class="info-group-title" id="zonas-y-mapa">Accedé a cada tarjeta para ver más.</div>
      
     <section class="gallery three">
       <article id="zonas-prohibidas" class="photo-card zoom" data-title="Zonas prohibidas" data-image="assets/zonas.png">
-        <img src="assets/zonas.png" alt="Zonas prohibidas">
+        <img src="assets/prev-zonas.png" alt="Zonas prohibidas">
         <div class="photo-info">
           <div class="order-badge">01</div>
           <h3>🚫 Zonas prohibidas</h3>
-          <p>Consultá las zonas donde no debe realizarse RCP.</p>
-        </div>
+          <p>Los lugares donde no se puede hacer RCP.</p><p>Durante el ascenso, tendrás que mencionarlas.</p>
+         <p class="card-hint">🔍 Ver zonas </p> </div>
       </article>
 
       <a id="mapa-zonas" class="photo-card" href="rcp-mapa.html">
@@ -88,35 +146,35 @@
         <div class="photo-info">
           <div class="order-badge">02</div>
           <h3>🗺️ Mapa de zonas prohibidas</h3>
-          <p>Ingresá al mapa para descubrir si podés hacer RCP en cada punto de la ciudad.</p>
+          <p>Verifica que conoces las zonas RCP tocando los puntos de la ciudad.</p> <p class="card-hint">🔍 Tocá para interactuar con el mapa </div>
         </div>
       </a>
 
       <article id="normas-generales" class="photo-card zoom" data-title="Normas generales del hospital" data-image="assets/reglas-normas_generales.webp">
-        <img src="assets/reglas-normas_generales.webp" alt="Normas generales del hospital">
+        <img src="assets/camas.jpeg" alt="Normas generales del hospital">
         <div class="photo-info">
           <div class="order-badge">03</div>
           <h3>📋 Normas generales del hospital</h3>
-          <p>Comportamiento y convivencia dentro del hospital.</p>
+          <p>Comportamiento y convivencia dentro del hospital.</p> <p class="card-hint">🔍 Ver las normas </div>
         </div>
       </article>
 
       <article id="reglas-mostrador" class="photo-card zoom" data-title="Reglas detrás del mostrador y atención al paciente" data-image="assets/reglas_piso1.webp">
-        <img src="assets/reglas_piso1.webp" alt="Reglas detrás del mostrador y atención al paciente">
+        <img src="assets/prev-piso1.jpg" alt="Reglas detrás del mostrador y atención al paciente">
         <div class="photo-info">
           <div class="order-badge">04</div>
           <h3>🩺 Reglas de mostrador y atención</h3>
-          <p>Atención al paciente y conducta profesional.</p>
+          <p>Brindar ayuda méica y vender píldoras.</p><p class="card-hint">🔍 Acceder a reglas</p>
         </div>
       </article>
 
-      <article id="evidencia-rcp" class="photo-card zoom" data-title="Evidencia de un RCP" data-image="assets/evid-rcp-verde.jpg">
-        <img src="assets/evid-rcp-verde.jpg" alt="Evidencia de un RCP">
+      <article id="evidencia-rcp" class="photo-card zoom" data-title="Evidencia de un RCP" data-image="assets/rcp_verde.jpg">
+        <img src="assets/rcp_verde.jpg" alt="Evidencia de un RCP">
         <div class="photo-info">
           <div class="order-badge">05</div>
           <h3>🫀 RCP</h3>
-          <p>Evidencia de un RCP: ponete en contacto con un entrenador y pedile que te saque una captura para tu ascenso. Deben verse los dos.</p>
-        </div>
+          <p>Requisito. Captura en la escena con instrutor, alumno, macros usadas en la escena (Inicio acceso a signos vitales...), fecha servidor.</p>
+       
       </article>
 
       <article id="requisitos-ascenso" class="photo-card zoom" data-title="Requisitos de ascenso" data-image="assets/asc-verde-blanco.png">
@@ -124,58 +182,76 @@
         <div class="photo-info">
           <div class="order-badge">06</div>
           <h3>📈 Requisitos de ascenso</h3>
-          <p>Ver los requisitos para avanzar a practicante de enfermería (bata blanca).</p>
-        </div>
+          <p>Todo lo que necesitás para ascender a Practicante de enfermería (bata blanca).</p>
+        <p class="card-hint">🔍 Lista de Requisitos </p> </div>
       </article>
 
     </section>
 
     <div id="eventos" class="macro-help after highlight">
-      <p><b>No olvides tu barra de experiencia</b></p><p>🏅 Todos los días hay <b>eventos que suman medallas y capacitaciones</b> que te ayudan a formarte mejor. ¡Sumate!</p>
+      <p><b>No olvides tu barra de experiencia</b></p><p>🏅 Todos los días hay <b>eventos</b>, que suman medallas, y <b>capacitaciones</b>, que te ayudan a formarte. ¡Sumate!</p>
+      <p><a href="https://malibu-med-cronograma.vercel.app/" target="_blank" rel="noopener">📅 Ver capacitaciones de la semana</a></p>
     </div>
 
-    <div class="section-title-row">
-      <h2 id="macros" class="section-title brand">Macros médicas</h2>
-      <button type="button" id="macroReset" class="macro-reset" hidden>↺ Reiniciar</button>
-    </div>
-    <div class="macro-help">
-      <p>Antes de cargarlas, <b>borrá las macros que tengas</b>.</p>
-      <p><a class="zoom-link" href="assets/tutorial-macro.png" data-title="Tutorial: cómo agregar las macros">Ver tutorial para agregarlas</a></p>
-      <p>Cuando termines, <b>buscá a un entrenador</b>.</p>
-    </div>
-
-    <section id="macro-grid" class="grid macros"></section>
-    <div class="macro-help after">
-      <details class="macro-more">
-        <summary>Desplegá para ver más info de las macros</summary>
-      <p>Al pegar las dos últimas (19 y 20), <b>reemplazá los datos entre paréntesis</b> por tu nombre en el juego, tu rango médico (los bata verde son <i>Enfermero</i>) y tu usuario de Discord. <a class="zoom-link" href="assets/discord2.png" data-title="¿Dónde veo mi usuario de Discord?">¿Dónde veo mi usuario?</a> ¿No tenés Discord? <a href="https://discord.com/register" target="_blank" rel="noopener">Creá tu cuenta acá</a>.</p>
-      <p>Ejemplo: bata verde llamado Pepito, con usuario de Discord <i>usuario</i>:</p>
-      <pre>/me Hola mi nombre es Pepito, Enfermero de Servicios Médicos Malibu Latam.
-/n mi Discord: usuario</pre>
-      <p>La macro de presentación (<i>/me Hola mi nombre es…</i>) sirve para saludar: cuando te cruces con alguien de otra facción, usala junto con el <b>gesto de saludo militar</b>.</p>
-      </details>
-    </div>
-
+   
+ <!-- 
     <h2 id="tutorial-rcp" class="section-title brand">Tutorial de RCP</h2>
+    <p>Gracias a la Dra. Colombia por grabar este video.</p><p>El video no reemplaza la instrucción del entrenador, usalo para repasar</p>
     <div class="macro-help important">
-      <p>🚑 <b>Nunca salgas a hacer RCP solo</b>: siempre tiene que acompañarte un entrenador, el que esté disponible.</p>
-      <p>Y <b>nunca en auto particular</b>: siempre en un vehículo de la facción.</p>
+    <p>MUY IMPORTANTE</p>
+      <p><b>Nunca salgas a hacer RCP solo</b>: siempre tiene que acompañarte un entrenador (cualquiera que esté disponible).</p>
+      <p> <b>Nunca en auto particular</b>: siempre en un vehículo de la facción.</p>
+      
     </div>
     <div class="video-card">
-      <!-- El .mov está en H.264: declarado como mp4 lo reproducen Chrome, Edge, Firefox y Safari -->
+     El .mov está en H.264: declarado como mp4 lo reproducen Chrome, Edge, Firefox y Safari -
       <video controls playsinline preload="metadata">
         <source src="assets/tutorial-rcp.mov" type="video/mp4">
         <source src="assets/tutorial-rcp.mov" type="video/quicktime">
         Tu navegador no puede reproducir el video. <a href="assets/tutorial-rcp.mov">Descargalo acá</a>.
       </video>
-    </div>
+    </div> -->
 
-    <footer>
-      Portal informativo · Facción Médica Malibu · OneState Roleplay
+
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="">
+          <div>
+            <strong>Servicios Médicos Malibu</strong>
+            <span>Centro de Formación Médica · OneState Roleplay</span>
+          </div>
+        </div>
+        <nav class="footer-cols" aria-label="Enlaces del pie">
+          <div class="footer-col">
+            <h4>Portal</h4>
+            <a href="index.html">🏠 Inicio</a>
+            <a href="bata-blanca.html#macros">🧾 Macros</a>
+            <a href="index.html#el-portal">🧭 Sobre el portal</a>
+          </div>
+          <div class="footer-col">
+            <h4>Ascensos</h4>
+            <a href="bata-blanca.html"><span class="coat-dot white"></span>Practicante de enfermería</a>
+            <a href="bata-azul.html"><span class="coat-dot blue"></span>Asistente de médico</a>
+            <a href="bata-morada.html"><span class="coat-dot purple"></span>Residente médico</a>
+            <a href="bata-cafe.html"><span class="coat-dot brown"></span>Médico residente</a>
+            <a href="bata-general.html"><span class="coat-dot green"></span>Médico general</a>
+            <a href="bata-especialista.html"><span class="coat-dot violet"></span>Médico especialista</a>
+          </div>
+          <div class="footer-col">
+            <h4>Comunidad</h4>
+            <a href="https://discord.gg/onestate-latam" target="_blank" rel="noopener">💬 Discord OneState Latam</a>
+            <a href="https://onestate.com" target="_blank" rel="noopener">🌐 Web oficial de OneState</a>
+          </div>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>Portal informativo · Facción Médica Malibu · OneState Roleplay</span>
+        <a class="footer-up" href="#">↑ Volver arriba</a>
+      </div>
     </footer>
   </main>
-
-  <div id="toast" class="toast">✓ Copiado al portapapeles</div>
+<div id="toast" class="toast">✓ Copiado al portapapeles</div>
 
   <div id="lightbox" class="lightbox" aria-hidden="true">
     <div class="lightbox-inner">
@@ -208,9 +284,9 @@
       { titulo:"Fuera de servicio", categoria:"/flobby", icono:"🛑", texto:"/flobby (10-7) Fuera de servicio." },
       { titulo:"En servicio", categoria:"/flobby", icono:"🟢", texto:"/flobby (10-8) En servicio." },
       { titulo:"TASER entrenamiento", categoria:"/do", icono:"🎯", texto:"/do TASER TASER TASER entrenamiento." },
-      { titulo:"Comunicado de atención", categoria:"/do", icono:"📢", texto:"/do [ATENCIÓN, COMUNICADO] Quienes hayan sido atendidos hacer el favor de retirarse, Gracias." },
-      { titulo:"Presentación médica", categoria:"/me", icono:"👨‍⚕️", texto:"/me Hola mi nombre es (Tu Nombre aquí ) (Rango médico aquí ) de Servicios Médicos Malibu Latam." },
-      { titulo:"Discord personal", categoria:"/n", icono:"💬", texto:"/n mi Discord: (tu cuenta de discord aquí)" }
+      { titulo:"Comunicado de atención", categoria:"/do", icono:"📢", texto:"/do [ATENCIÓN, COMUNICADO] Quienes ya hayan sido atendidos, por favor retírense. Gracias." },
+      { titulo:"Presentación médica", categoria:"/me", icono:"👨‍⚕️", texto:"/me Hola, mi nombre es (tu nombre aquí), (tu rango médico aquí) de Servicios Médicos Malibu Latam." },
+      { titulo:"Discord personal", categoria:"/n", icono:"💬", texto:"/n mi Discord: (tu usuario de Discord aquí)" }
     ];
 
     // Se muestra solo número + título; al tocar la tarjeta se copia el comando (portal.js).
@@ -232,10 +308,17 @@
     const cards = [...grid.children];
     const num = i => String(i + 1).padStart(2, "0");
     let next = 0, warnTimer;
+    const bar = document.getElementById("macroBar");
+    const count = document.getElementById("macroCount");
     function highlight(i){
       next = i % cards.length;
       cards.forEach((c, j) => c.classList.toggle("next", j === next));
       resetBtn.hidden = next === 0;
+      // i = cantidad copiadas (llega a cards.length al copiar la última)
+      const done = Math.min(i, cards.length);
+      bar.style.width = `${done / cards.length * 100}%`;
+      count.textContent = done === cards.length ? "✓ ¡Todas copiadas!" : `${done} / ${cards.length} copiadas`;
+      count.classList.toggle("done", done === cards.length);
     }
     function warn(card){
       toast.textContent = `✋ Primero copiá la macro ${num(next)}`;

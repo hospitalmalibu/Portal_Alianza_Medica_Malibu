@@ -68,6 +68,14 @@
     document.addEventListener("keydown", e => { if(e.key === "Escape") closeDetail(); });
   }
 
+  // ---------- Desplegables: si la URL apunta a un <details> (ej. index.html#guia), se abre ----------
+  function openHashTarget(){
+    const el = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if(el && el.tagName === "DETAILS") el.open = true;
+  }
+  window.addEventListener("hashchange", openHashTarget);
+  openHashTarget();
+
   // ---------- Visor de imágenes ----------
   if(!lightbox) return;
 

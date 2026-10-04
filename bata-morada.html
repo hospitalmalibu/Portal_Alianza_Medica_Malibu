@@ -3,16 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#07131f" />
+  <meta name="theme-color" content="#0f2c58" />
   <title>Ascenso a Residente médico · Facción Médica Malibu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" />
   <link rel="stylesheet" href="portal.css" />
 </head>
-<body>
+<body class="page-morada">
   <div class="topbar">
     <div class="topbar-inner">
       <a class="brand-mini" href="index.html" title="Volver al inicio"><div class="mark"><img src="assets/logo.png" alt="One State Medical Alliance"></div><span>Servicios Médicos Malibu</span></a>
       <nav class="ascensos" aria-label="Navegación principal">
-        <a class="home-btn" href="index.html" title="Volver al inicio">🏠 Inicio</a>
+        
+        <a class="home-btn" href="index.html" title="Volver al inicio">🏠 Inicio</a>      <a class="home-btn" href="https://malibu-med-cronograma.vercel.app/" target="_blank" rel="noopener">📅 Capacitaciones </a>
+
         <details class="nav-menu">
           <summary class="home-btn">📈 Ascensos <span class="nav-caret">▾</span></summary>
           <div class="nav-menu-list">
@@ -58,7 +63,7 @@
       <span class="eyebrow"><span class="coat-dot blue"></span> ASCENSO <span class="coat-dot purple"></span></span>
       <h1><span class="accent">Asistente de médico<br>a Residente médico</span></h1>
       <p class="sub">Mismo equipo · Mayor impacto</p>
-      <p class="hint">🔽 Seguí deslizando</p>
+   
     </section>
 
     <h2 id="requisitos" class="section-title brand">Información importante</h2>
@@ -71,24 +76,24 @@
           <div class="order-badge">01</div>
           <h3>💬 Rol de facción en Discord</h3>
           <p>Tener el rol de la facción asignado en el Discord oficial.</p>
-          <p class="card-hint">🔽 Deslizá para ver más</p>
+          <p class="card-hint">🔽 Ver paso a paso</p>
         </div>
       </a>
-      <article class="photo-card zoom" data-title="Eventos y capacitaciones" data-image="assets/evid-capacitacion1.png">
-        <img src="assets/evid-capacitacion1.png" alt="Eventos y capacitaciones">
+      <article class="photo-card zoom" data-title="Eventos y capacitaciones" data-image="assets/evento1.jpg">
+        <img src="assets/evento1.jpg" alt="Eventos y capacitaciones">
         <div class="photo-info">
           <div class="order-badge">02</div>
           <h3>🎓 Eventos y capacitaciones</h3>
-          <p>Participar en 2 capacitaciones y 2 eventos de la facción (4 evidencias). Se debe ver que estás presente y la actividad.</p>
+          <p>Participar en 2 capacitaciones y 2 eventos de la facción (4 evidencias). En cada una se tiene que ver el aspirante a ascender y la actividad.</p>
         </div>
       </article>
-      <article class="photo-card zoom" data-title="Ejemplo de evidencia de RCP" data-image="assets/req-rcp-morado-azul.png">
-        <img src="assets/pre-rcp-rp.png" alt="RCP con 3 batas verdes y 3 batas blancas">
+      <article class="photo-card zoom" data-title="Ejemplo de evidencia de RCP" data-image="assets/req-rcp-azul.png">
+        <img src="assets/req-rcp-azul.png" alt="RCP con 3 batas verdes y 3 batas blancas">
         <div class="photo-info">
           <div class="order-badge">03</div>
           <h3>🫀 Entrenar en RCP a 3 batas verdes y 3 batas blancas</h3>
-          <p>Presentar evidencia con seis alumnos distintos en diferentes días.</p>
-          <p class="card-hint">🔍 Ingresá para ver un ejemplo</p>
+          <p>Presentar evidencia con seis alumnos distintos, en días diferentes. Se debe ver el alumno realizando la maniobra, las macros y el instructor.</p>
+          <p class="card-hint">🔍 Tocá para ver un ejemplo</p>
         </div>
       </article>
       <article class="photo-card zoom" data-title="Reglas de la Alianza de Médicos (MD)" data-image="assets/req-md.png">
@@ -96,7 +101,7 @@
         <div class="photo-info">
           <div class="order-badge">04</div>
           <h3>📘 Reglas MD</h3>
-          <p>El instructor hará preguntas sobre las MD. El aspirante debe responder correctamente.</p>
+          <p>El evaluador pregunta sobre las reglas MD.</p>
         </div>
       </article>
       <a class="photo-card" href="rcp-mapa.html">
@@ -104,7 +109,7 @@
         <div class="photo-info">
           <div class="order-badge">05</div>
           <h3>🗺️ Mapa de zonas prohibidas</h3>
-          <p>Ingresá al mapa para descubrir si podés hacer RCP en cada punto de la ciudad.</p>
+          <p>Tocar cualquier punto de la ciudad y veridicar si se puede hacer RCP.</p>
         </div>
       </a>
       <article class="photo-card zoom" data-title="Requisitos de ascenso" data-image="assets/asc-azul-morado.webp">
@@ -160,8 +165,42 @@ MENCIÓN: @Angel Riv ⚕️ @MJA. DRA MAKY🌸</pre>
       <div class="tip"><span class="ico">📘</span><div>Darle al alumno las <b>zonas prohibidas</b> y las <b>MD</b>.</div></div>
     </div>
 
-    <footer>
-      Portal informativo · Facción Médica Malibu · OneState Roleplay
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="">
+          <div>
+            <strong>Servicios Médicos Malibu</strong>
+            <span>Centro de Formación Médica · OneState Roleplay</span>
+          </div>
+        </div>
+        <nav class="footer-cols" aria-label="Enlaces del pie">
+          <div class="footer-col">
+            <h4>Portal</h4>
+            <a href="index.html">🏠 Inicio</a>
+            <a href="bata-blanca.html#macros">🧾 Macros</a>
+            <a href="index.html#el-portal">🧭 Sobre el portal</a>
+          </div>
+          <div class="footer-col">
+            <h4>Ascensos</h4>
+            <a href="bata-blanca.html"><span class="coat-dot white"></span>Practicante de enfermería</a>
+            <a href="bata-azul.html"><span class="coat-dot blue"></span>Asistente de médico</a>
+            <a href="bata-morada.html"><span class="coat-dot purple"></span>Residente médico</a>
+            <a href="bata-cafe.html"><span class="coat-dot brown"></span>Médico residente</a>
+            <a href="bata-general.html"><span class="coat-dot green"></span>Médico general</a>
+            <a href="bata-especialista.html"><span class="coat-dot violet"></span>Médico especialista</a>
+          </div>
+          <div class="footer-col">
+            <h4>Comunidad</h4>
+            <a href="https://discord.gg/onestate-latam" target="_blank" rel="noopener">💬 Discord OneState Latam</a>
+            <a href="https://onestate.com" target="_blank" rel="noopener">🌐 Web oficial de OneState</a>
+          </div>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>Portal informativo · Facción Médica Malibu · OneState Roleplay</span>
+        <a class="footer-up" href="#">↑ Volver arriba</a>
+      </div>
     </footer>
   </main>
 

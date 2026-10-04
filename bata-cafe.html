@@ -3,16 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#07131f" />
+  <meta name="theme-color" content="#2c1650" />
   <title>Ascenso a Médico residente · Facción Médica Malibu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" />
   <link rel="stylesheet" href="portal.css" />
 </head>
-<body>
+<body class="page-cafe">
   <div class="topbar">
     <div class="topbar-inner">
       <a class="brand-mini" href="index.html" title="Volver al inicio"><div class="mark"><img src="assets/logo.png" alt="One State Medical Alliance"></div><span>Servicios Médicos Malibu</span></a>
       <nav class="ascensos" aria-label="Navegación principal">
-        <a class="home-btn" href="index.html" title="Volver al inicio">🏠 Inicio</a>
+        <a class="home-btn" href="index.html" title="Volver al inicio">🏠 Inicio</a>      <a class="home-btn" href="https://malibu-med-cronograma.vercel.app/" target="_blank" rel="noopener">📅 Capacitaciones </a>
+
         <details class="nav-menu">
           <summary class="home-btn">📈 Ascensos <span class="nav-caret">▾</span></summary>
           <div class="nav-menu-list">
@@ -54,39 +58,41 @@
   </div>
 
   <main class="wrap">
-    <section class="hero" style="--hero-img:url('assets/rcp-web.jpg')">
+    <section class="hero" style="--hero-img:url('assets/portada-cafe.jpg')">
       <span class="eyebrow"><span class="coat-dot purple"></span> ASCENSO <span class="coat-dot brown"></span></span>
       <h1><span class="accent">Residente médico<br>a Médico residente</span></h1>
       <p class="sub">Misma pasión · Mayor responsabilidad</p>
-      <p class="hint">🔽 Seguí deslizando</p>
+
     </section>
 
     <h2 id="requisitos" class="section-title brand">Información importante</h2>
     <div class="info-group-title">Lo que necesitás para ascender a Médico residente (bata café).</div>
 
     <section class="gallery">
-      <article class="photo-card zoom" data-title="Ejemplo de práctica de RCP" data-image="assets/req-rcp-morado-cafe.png">
-        <img src="assets/req-rcp-morado-cafe.png" alt="Prácticas de RCP">
+      <article class="photo-card zoom" data-title="Ejemplo de práctica de RCP" data-image="assets/rcp_verde.jpg">
+        <img src="assets/rcp_verde.jpg" alt="Prácticas de RCP">
         <div class="photo-info">
           <div class="order-badge">01</div>
-          <h3>🎥 Prácticas RCP</h3>
+          <h3>🎥 Prácticas de RCP</h3>
           <p>Evidencia de 6 prácticas de RCP entrenando a 3 batas verdes y 3 batas blancas.</p>
         </div>
       </article>
-      <article class="photo-card zoom" data-title="Evidencia de 15 RCP como alumno" data-image="assets/pre-rcp-rp.png">
-        <img src="assets/pre-rcp-rp.png" alt="Evidencia de 15 RCP como alumno">
+      <article class="photo-card zoom" data-title="Evidencia de 15 RCP como alumno" data-image="assets/evid-tareasemanal-pldora-rcp.png">
+        <img src="assets/prev-explicar-rcp.png" alt="Evidencia de 15 RCP como alumno">
         <div class="photo-info">
           <div class="order-badge">02</div>
           <h3>🫀 Evidencia de 15 RCP como alumno</h3>
-          <p>Realizar 15 RCP y presentar evidencia de tarea semanal.</p>
+          <p>Hacer 15 RCP y presentar la evidencia de la tarea semanal.</p>
+           <p class="card-hint">🔍 Ver ejemplo </p> 
         </div>
       </article>
-      <article class="photo-card zoom" data-title="Venta de 30 píldoras" data-image="assets/tarea-curas.png">
-        <img src="assets/tarea-curas.png" alt="Venta de 30 píldoras">
+      <article class="photo-card zoom" data-title="Venta de 30 píldoras" data-image="assets/evid-tareasemanal-pldora-rcp.png">
+        <img src="assets/prev-piso1.jpg" alt="Venta de 30 píldoras">
         <div class="photo-info">
           <div class="order-badge">03</div>
           <h3>💊 Venta de 30 píldoras</h3>
-          <p>Vender 30 píldoras y presentar evidencia de tarea semanal.</p>
+          <p>Vender 30 píldoras y presentar la evidencia de la tarea semanal.</p>           <p class="card-hint">🔍 Ver ejemplo </p> 
+
         </div>
       </article>
       <article class="photo-card zoom" data-title="Flyer del ascenso" data-image="assets/asc-cafe-gral.webp">
@@ -94,26 +100,50 @@
         <div class="photo-info">
           <div class="order-badge">04</div>
           <h3>🖼️ Flyer del ascenso</h3>
-          <p>Tocá para verlo en grande.</p>
+          <p>Listado de requisitos.</p>
+                     <p class="card-hint">🔍 Tocá para verlo en grande </p> 
+
         </div>
       </article>
     </section>
 
-    <h2 id="actividades" class="section-title brand">Actividades por rango</h2>
-    <div class="macro-help">
-      <p>Además de los requisitos de ascenso, cada rango tiene tareas propias dentro de la facción. Cumplirlas es parte del <b>compromiso constante</b> que se pide para mantener la bata.</p>
-    </div>
 
-    <div class="info-group-title">Médico residente (bata café)</div>
-    <ul class="checklist">
-      <li><b>Investigación.</b></li>
-      <li><b>Apoyo en RCP</b> entrenando a batas azules.</li>
-      <li><b>Apoyo en RCP</b> de batas verdes y blancas.</li>
-      <li><b>Apoyo en piso 1.</b></li>
-    </ul>
-
-    <footer>
-      Portal informativo · Facción Médica Malibu · OneState Roleplay
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="">
+          <div>
+            <strong>Servicios Médicos Malibu</strong>
+            <span>Centro de Formación Médica · OneState Roleplay</span>
+          </div>
+        </div>
+        <nav class="footer-cols" aria-label="Enlaces del pie">
+          <div class="footer-col">
+            <h4>Portal</h4>
+            <a href="index.html">🏠 Inicio</a>
+            <a href="bata-blanca.html#macros">🧾 Macros</a>
+            <a href="index.html#el-portal">🧭 Sobre el portal</a>
+          </div>
+          <div class="footer-col">
+            <h4>Ascensos</h4>
+            <a href="bata-blanca.html"><span class="coat-dot white"></span>Practicante de enfermería</a>
+            <a href="bata-azul.html"><span class="coat-dot blue"></span>Asistente de médico</a>
+            <a href="bata-morada.html"><span class="coat-dot purple"></span>Residente médico</a>
+            <a href="bata-cafe.html"><span class="coat-dot brown"></span>Médico residente</a>
+            <a href="bata-general.html"><span class="coat-dot green"></span>Médico general</a>
+            <a href="bata-especialista.html"><span class="coat-dot violet"></span>Médico especialista</a>
+          </div>
+          <div class="footer-col">
+            <h4>Comunidad</h4>
+            <a href="https://discord.gg/onestate-latam" target="_blank" rel="noopener">💬 Discord OneState Latam</a>
+            <a href="https://onestate.com" target="_blank" rel="noopener">🌐 Web oficial de OneState</a>
+          </div>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>Portal informativo · Facción Médica Malibu · OneState Roleplay</span>
+        <a class="footer-up" href="#">↑ Volver arriba</a>
+      </div>
     </footer>
   </main>
 

@@ -3,16 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#07131f" />
+  <meta name="theme-color" content="#0c2f1d" />
   <title>Ascenso a Médico especialista · Facción Médica Malibu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" />
   <link rel="stylesheet" href="portal.css" />
 </head>
-<body>
+<body class="page-especialista">
   <div class="topbar">
     <div class="topbar-inner">
       <a class="brand-mini" href="index.html" title="Volver al inicio"><div class="mark"><img src="assets/logo.png" alt="One State Medical Alliance"></div><span>Servicios Médicos Malibu</span></a>
-      <nav class="ascensos" aria-label="Navegación principal">
-        <a class="home-btn" href="index.html" title="Volver al inicio">🏠 Inicio</a>
+      <nav class="ascensos" aria-label="Navegación principal">  
+        <a class="home-btn" href="index.html" title="Volver al inicio">🏠 Inicio</a>      <a class="home-btn" href="https://malibu-med-cronograma.vercel.app/" target="_blank" rel="noopener">📅 Capacitaciones </a>
+
         <details class="nav-menu">
           <summary class="home-btn">📈 Ascensos <span class="nav-caret">▾</span></summary>
           <div class="nav-menu-list">
@@ -58,13 +62,13 @@
       <span class="eyebrow"><span class="coat-dot green"></span> ASCENSO <span class="coat-dot violet"></span></span>
       <h1><span class="accent">Médico general<br>a Médico especialista</span></h1>
       <p class="sub">Misma pasión · Mayor responsabilidad</p>
-      <p class="hint">🔽 Seguí deslizando</p>
     </section>
 
-    <div class="macro-help important">
-      <p><b>Antes de presentarte:</b> toda evidencia deberá presentarse en <b>SCREENSHOT o VIDEO</b>, en fechas y horas del servidor.</p>
-      <p><b>Importante:</b> el cumplimiento de los requisitos es obligatorio y el proceso debe realizarse en el orden indicado. El incumplimiento puede afectar tu ascenso.</p>
-      <p>Estos ascensos son un punto de calificación en caso de poca participación en las actividades, por lo que servirán para <b>mantener el cargo</b>.</p>
+      <div class="trainer-note" style="margin-bottom:18px">
+      <div class="macro-help important">
+        <p><b>Advertencia:</b> para conservar tu cargo es indispensable demostrar <b>compromiso constante</b>, cumplir con las <b>tareas asignadas</b> y participar activamente en <b>uno de los tres departamentos</b> establecidos.</p>
+      </div>
+      <img src="assets/adjunto.png" alt="Dr. Gabriele Enok">
     </div>
 
     <h2 id="requisitos" class="section-title brand">Información importante</h2>
@@ -80,16 +84,16 @@
         </div>
       </a>
       <a class="photo-card" href="#req-reuniones">
-        <img src="assets/evid-capacitacion1.png" alt="Reuniones o tutoriales">
+        <img src="assets/capacitacion-inicial.jpg" alt="Reuniones o tutoriales">
         <div class="photo-info">
           <div class="order-badge">02</div>
           <h3>🗣️ 2 reuniones o tutoriales</h3>
-          <p>Con iniciales o tutoriales. Evidencia: 2 screenshots del foro.</p>
+          <p>Con iniciales (personal nuevo) o tutoriales. Evidencia: 2 screenshots del foro.</p>
           <p class="card-hint">🔍 Tocá para ver el detalle</p>
         </div>
       </a>
       <a class="photo-card" href="#req-eventos">
-        <img src="assets/evento.png" alt="Eventos o prácticas de la alianza">
+        <img src="assets/capacotacion1.jpeg" alt="Eventos o prácticas de la alianza">
         <div class="photo-info">
           <div class="order-badge">03</div>
           <h3>🎉 Mínimo 2 eventos o prácticas</h3>
@@ -98,7 +102,7 @@
         </div>
       </a>
       <a class="photo-card" href="#req-capacitacion">
-        <img src="assets/pre-rcp-rp.png" alt="Supervisar batas azules en capacitación RCP">
+        <img src="assets/piso2.jpeg" alt="Supervisar batas azules en capacitación RCP">
         <div class="photo-info">
           <div class="order-badge">04</div>
           <h3>🫀 Supervisar 2 batas azules</h3>
@@ -119,71 +123,132 @@
     <!-- ================= 01 · JEFE ADJUNTO ================= -->
     <section id="req-jefe" class="req popup">
       <div class="req-head"><div class="order-badge">01</div><h2>✅ Confirmación de un jefe adjunto</h2></div>
-      <p>Presentar la <b>confirmación de un jefe adjunto</b>.</p>
-      <div class="stats two">
-        <div class="stat"><b>1</b>Confirmación de jefe adjunto.</div>
-        <div class="stat"><b>📸</b>Screenshot del foro.</div>
+      <div class="two-col">
+        <div>
+          <p>Presentar la <b>confirmación de un jefe adjunto</b>.</p>
+          <div class="stats two">
+            <div class="stat"><b>1</b>Confirmación de jefe adjunto.</div>
+            <div class="stat"><b>📸</b>Screenshot del foro.</div>
+          </div>
+        </div>
+        <div>
+          <img class="fig" src="assets/pre-md.png" alt="Confirmación de un jefe adjunto">
+        </div>
       </div>
     </section>
 
     <!-- ================= 02 · REUNIONES ================= -->
     <section id="req-reuniones" class="req popup">
       <div class="req-head"><div class="order-badge">02</div><h2>🗣️ Evidencia de 2 reuniones realizadas</h2></div>
-      <p>Presentar evidencia de <b>2 reuniones realizadas</b> con iniciales o tutoriales.</p>
-      <div class="stats two">
-        <div class="stat"><b>2</b>Reuniones con iniciales o tutoriales.</div>
-        <div class="stat"><b>📸</b>2 screenshots del foro.</div>
+      <div class="two-col">
+        <div>
+          <p>Presentar evidencia de <b>2 reuniones realizadas</b> con iniciales o tutoriales.</p>
+          <div class="stats two">
+            <div class="stat"><b>2</b>Reuniones con iniciales o tutoriales.</div>
+            <div class="stat"><b>📸</b>2 screenshots del foro.</div>
+          </div>
+        </div>
+        <div>
+          <img class="fig" src="assets/capacitacion-inicial.jpg" alt="Reuniones o tutoriales">
+        </div>
       </div>
     </section>
 
     <!-- ================= 03 · EVENTOS ================= -->
     <section id="req-eventos" class="req popup">
       <div class="req-head"><div class="order-badge">03</div><h2>🎉 Participación en 2 eventos o prácticas</h2></div>
-      <p>Participar como mínimo en <b>2 eventos o prácticas de la alianza</b>.</p>
-      <div class="stats two">
-        <div class="stat"><b>2</b>Eventos o prácticas como mínimo.</div>
-        <div class="stat"><b>📸 / 🎥</b>Evidencia en video o screenshot.</div>
+      <div class="two-col">
+        <div>
+          <p>Participar como mínimo en <b>2 eventos o prácticas de la alianza</b>.</p>
+          <div class="stats two">
+            <div class="stat"><b>2</b>Eventos o prácticas como mínimo.</div>
+            <div class="stat"><b>📸 / 🎥</b>Evidencia en video o screenshot.</div>
+          </div>
+        </div>
+        <div>
+          <img class="fig" src="assets/capacotacion1.jpeg" alt="Eventos o prácticas de la alianza">
+        </div>
       </div>
     </section>
 
     <!-- ================= 04 · CAPACITACIÓN RCP ================= -->
     <section id="req-capacitacion" class="req popup">
       <div class="req-head"><div class="order-badge">04</div><h2>🫀 Supervisar 2 batas azules en capacitación RCP</h2></div>
-      <p>Supervisar a <b>2 batas azules</b> en su proceso de <b>capacitación RCP</b>.</p>
-      <div class="stats two">
-        <div class="stat"><b>2</b>Batas azules supervisadas.</div>
-        <div class="stat"><b>📸 / 🎥</b>Evidencia en screenshot o video.</div>
+      <div class="two-col">
+        <div>
+          <p>Supervisar a <b>2 batas azules</b> en su proceso de <b>capacitación RCP</b>.</p>
+          <div class="stats two">
+            <div class="stat"><b>2</b>Batas azules supervisadas.</div>
+            <div class="stat"><b>📸 / 🎥</b>Evidencia en screenshot o video.</div>
+          </div>
+        </div>
+        <div>
+          <img class="fig" src="assets/piso2.jpeg" alt="Supervisar batas azules en capacitación RCP">
+        </div>
       </div>
     </section>
     <h2 id="actividades" class="section-title brand">Actividades por rango</h2>
     <div class="macro-help">
       <p>Además de los requisitos de ascenso, cada rango tiene tareas propias dentro de la facción. Cumplirlas es parte del <b>compromiso constante</b> que se pide para mantener la bata.</p>
     </div>
-
-    <div class="info-group-title">Médico general</div>
+  <div class="info-group-title">Médico general</div>
     <ul class="checklist">
-      <li><b>Supervisar la enseñanza de RCP</b> a asistentes de médico (bata azul).</li>
+      <li><b>Supervisar la enseñanza de RCP</b> de asistentes de médico (bata azul).</li>
       <li><b>Apoyo en investigaciones.</b></li>
       <li><b>Apoyo en piso 1 y 0.</b></li>
-      <li><b>Apoyo capacitando</b> en tutoriales y a batas verdes.</li>
+      <li><b>Brindar capacitaciones a </b> tutoriales y a batas verdes.</li>
     </ul>
 
     <div class="info-group-title">Médico especialista</div>
     <ul class="checklist">
-      <li><b>Reuniones de iniciación</b> a personal nuevo ingreso. Evidencia: screenshot del foro.</li>
-      <li><b>Asignar entrenadores</b> a batas verdes. Evidencia: screenshot.</li>
-      <li><b>Organización y supervisión</b> de piso 1. Evidencia: screenshot.</li>
-      <li><b>Calificar y corregir procesos de RCP</b> de bata azul al azar. Evidencia: screenshot o video.</li>
-      <li><b>Participar en actividades</b> de la facción. Evidencia: video o screenshot.</li>
-      <li><b>Rotar y supervisión constante</b> entre piso 0 y 1. Evidencia: screenshot o video.</li>
-      <li><b>Investigaciones en AK.</b> Evidencia: screenshot o video.</li>
-      <li><b>Tomar reportes de malas prácticas</b> y darles seguimiento. Evidencia: screenshot del reporte.</li>
-      <li><b>Recuperación de ambulancias</b> en la ciudad. Evidencia: screenshot.</li>
-      <li><b>Prácticas para ascensos</b> bata verde y blanca. Evidencia: video o screenshot.</li>
+      <li><b>Reuniones de iniciación</b> a personal de nuevo ingreso. </li>
+      <li><b>Asignar entrenadores</b> a batas verdes.</li>
+      <li><b>Organización y supervisión</b> de piso 1.</li>
+      <li><b>Calificar y corregir procesos de RCP</b> de bata azul al azar. </li>
+      <li><b>Participar en actividades</b> de la facción.</li>
+      <li><b>Rotación y supervisión constante</b> entre piso 0 y 1.</li>
+      <li><b>Investigaciones en AK.</b> </li>
+      <li><b>Tomar reportes de malas prácticas</b> y darles seguimiento. .</li>
+      <li><b>Recuperación de ambulancias</b> en la ciudad.</li>
+      <li><b>Prácticas para ascensos</b> bata verde y blanca. </li>
     </ul>
 
-    <footer>
-      Portal informativo · Facción Médica Malibu · OneState Roleplay
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="">
+          <div>
+            <strong>Servicios Médicos Malibu</strong>
+            <span>Centro de Formación Médica · OneState Roleplay</span>
+          </div>
+        </div>
+        <nav class="footer-cols" aria-label="Enlaces del pie">
+          <div class="footer-col">
+            <h4>Portal</h4>
+            <a href="index.html">🏠 Inicio</a>
+            <a href="bata-blanca.html#macros">🧾 Macros</a>
+            <a href="index.html#el-portal">🧭 Sobre el portal</a>
+          </div>
+          <div class="footer-col">
+            <h4>Ascensos</h4>
+            <a href="bata-blanca.html"><span class="coat-dot white"></span>Practicante de enfermería</a>
+            <a href="bata-azul.html"><span class="coat-dot blue"></span>Asistente de médico</a>
+            <a href="bata-morada.html"><span class="coat-dot purple"></span>Residente médico</a>
+            <a href="bata-cafe.html"><span class="coat-dot brown"></span>Médico residente</a>
+            <a href="bata-general.html"><span class="coat-dot green"></span>Médico general</a>
+            <a href="bata-especialista.html"><span class="coat-dot violet"></span>Médico especialista</a>
+          </div>
+          <div class="footer-col">
+            <h4>Comunidad</h4>
+            <a href="https://discord.gg/onestate-latam" target="_blank" rel="noopener">💬 Discord OneState Latam</a>
+            <a href="https://onestate.com" target="_blank" rel="noopener">🌐 Web oficial de OneState</a>
+          </div>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>Portal informativo · Facción Médica Malibu · OneState Roleplay</span>
+        <a class="footer-up" href="#">↑ Volver arriba</a>
+      </div>
     </footer>
   </main>
 

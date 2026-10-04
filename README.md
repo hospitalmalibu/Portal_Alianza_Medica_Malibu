@@ -78,7 +78,6 @@ Portal_Alianza_Medica_Malibu/
 ├── .firebase/               Caché de la CLI de Firebase (hashes de archivos publicados)
 ├── LEEME.txt                Nota vieja de una entrega anterior (menciona Netlify). Obsoleta.
 ├── README.md                Este documento
-└── PROMPT-portal.md         Prompt para recrear el sitio completo con una IA. NO se publica.
 ```
 
 ---
@@ -99,7 +98,6 @@ Con `cleanUrls` activado, Firebase sirve cada página también sin la extensión
 | `bata-especialista.html` | Ascenso a Médico especialista | Sábado | `assets/ph-especialista.jpg` | `#requisitos`, `#req-jefe`, `#req-reuniones`, `#req-eventos`, `#req-capacitacion` |
 | `bata-tareas.html` | Actividades por bata | — | por defecto (`assets/zona-lenador.jpeg`) | `#actividades`, `#bata-marron`, `#medico-general`, `#medico-especialista` |
 | `rcp-mapa.html` | Mapa de zonas RCP | — | no tiene portada | — |
-| `ascender.html` | Solicitud de ascenso | — | por defecto (`assets/zona-lenador.jpeg`) | — |
 
 ### 3.2 Escalera de rangos y colores
 
@@ -272,24 +270,6 @@ Las macros (`#macrosDropdown`) y los documentos (`#docsDropdown`) están en elem
     document.getElementById(id).open = true));
 ```
 
-### 6.4 Documentación para ascensos
-
-Es una galería de 5 columnas (`.gallery.docs`) con estas tarjetas: inventario, DNI, registro de trabajo, certificado de comunicación social y carnet de la facción. Las capturas de documentos tienen el contenido a la izquierda y espacio vacío a la derecha. Por eso llevan la clase `.doc`, que alinea la imagen arriba a la izquierda (`object-position:left top`) para que el recorte no corte el documento. El carnet es vertical y no lleva `.doc`.
-
-### 6.5 Video tutorial
-
-```html
-<video controls playsinline preload="metadata">
-  <source src="assets/tutorial-rcp.mov" type="video/mp4">
-  <source src="assets/tutorial-rcp.mov" type="video/quicktime">
-</video>
-```
-
-- El `.mov` usa el códec **H.264**. Declarado como `video/mp4`, lo reproducen Chrome, Edge, Firefox y Safari sin necesidad de convertirlo. Si se reemplaza por un `.mov` en **HEVC/H.265**, que es lo que graban los iPhone por defecto, **dejará de verse en Chrome y Firefox**: en ese caso hay que convertirlo a MP4 H.264.
-- `preload="metadata"` hace que al entrar solo se descarguen la duración y el primer cuadro, no los ~26 MB completos.
-- `playsinline` evita que en iPhone se abra solo en pantalla completa.
-
----
 
 ## 7. `rcp-mapa.html`: mapa interactivo de zonas
 
@@ -398,7 +378,6 @@ El archivo está dividido en bloques con comentarios `/* ---------- … --------
 12. aviso de copiado y visor
 13. pie
 14. responsive
-15. overrides del chatbot
 
 ### 8.3 Puntos de corte (responsive)
 
@@ -474,7 +453,6 @@ Variante `.card.action` (borde rojo): un paso que se hace en el juego y no tiene
 | Prefijo | Contenido | Ejemplos |
 | --- | --- | --- |
 | `asc-` | Flyers de requisitos de cada ascenso | `asc-azul-blanco.webp`, `asc-cafe-gral.webp` |
-| `doc-` | Capturas de documentos del juego | `doc-dni.png`, `doc-trabajo.png`, `doc-credencial.png` |
 | `pre-` | Miniaturas para tarjetas | `pre-macro.png`, `pre-mapa.webp`, `pre-zonas.png` |
 | `ph-` | Fotos de portada o ilustrativas | `ph-bataazul.jpg`, `ph-medicos.jpg` |
 | `req-` | Infografías de requisitos o reglas | `req-md.png`, `req-rcp-morado-azul.png` |
