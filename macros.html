@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f3a28" />
+  <title>Enfermeros Bata Berde · Facción Médica Malibu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" />
+  <link rel="stylesheet" href="portal.css" />
+</head>
+<body class="page-blanca">
+  <div class="topbar">
+    <div class="topbar-inner">
+      <a class="brand-mini" href="index.html" title="Volver al inicio"><div class="mark"><img src="assets/logo.png" alt="One State Medical Alliance"></div><span>Servicios Médicos Malibu</span></a>
+      <nav class="ascensos" aria-label="Navegación principal">
+        <a class="home-btn" href="index.html" title="Volver al inicio">🏠 Inicio</a>     
+      
+        
+        <details class="nav-menu end">
+          <summary class="home-btn">➕ Más <span class="nav-caret">▾</span></summary>
+          <div class="nav-menu-list">
+            <a class="nav-link" href="https://discord.gg/onestate-latam" target="_blank" rel="noopener">💬 Discord</a>
+            <a class="nav-link" href="https://onestate.com" target="_blank" rel="noopener">🌐 Web oficial</a>
+          </div>
+        </details>
+      </nav>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <div class="home-intro">
+      <section class="hero" style="--hero-img:url('assets/angel_portada.webp')">
+        <span class="eyebrow"><span class="coat-dot green"></span> Bienvenido <span class="coat-dot green"></span></span>
+        <h1><span class="accent">Enfermero<br></span></h1>
+      </section>
+
+      <section id="bienvenida" class="welcome-card">
+        <div class="welcome-icon logo"><img src="assets/logo.png" alt="One State Medical Alliance"></div>
+        <div>
+          <h2>¡Bienvenido a la Facción Médica Malibu!</h2>
+          <p>Nos alegra tenerte en el equipo. Acá valoramos el respeto, el compañerismo, el aprendizaje y la vocación de servicio.</p>
+          <p class="strong">Que disfrutes esta nueva etapa y sigas creciendo con nosotros dentro del hospital.</p>
+       <p>— Angel Riv</p> </div>
+      </section>
+    </div>
+ <div class="section-title-row">
+      <h2 id="macros" class="section-title brand">Macros médicas</h2>
+      <button type="button" id="macroReset" class="macro-reset" hidden>↺ Reiniciar</button>
+    </div>
+    <details class="macro-guide">
+      <summary>
+        <span class="guide-ico" aria-hidden="true"><img src="assets/ico-macro.png" alt=""></span>
+        <span class="guide-head">
+          <span class="guide-title">Cómo cargar las macros</span>
+          <span class="guide-chips">
+            <span class="guide-chip"><b>1</b> Borrá las tuyas</span>
+            <span class="guide-chip"><b>2</b> Copialas en orden</span>
+            <span class="guide-chip"><b>3</b> Buscá un entrenador</span>
+          </span>
+        </span>
+        <span class="guide-toggle">Ver guía</span>
+      </summary>
+      <div class="guide-body">
+        <div class="guide-step">
+          <span class="step-n">1</span>
+          <div>
+            <h3>Borrá tus macros</h3>
+            <p>Antes de cargarlas, <b>borrá las macros que tengas</b>.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="step-n">2</span>
+          <div>
+            <h3>Copialas en orden</h3>
+            <p>Tocá cada macro en orden para copiarla y pegala en el juego. <a class="zoom-link" href="assets/tutorial-macro.png" data-title="Tutorial: cómo agregar las macros">Ver tutorial para agregarlas</a></p>
+            <p>Al pegar las dos últimas (19 y 20), <b>reemplazá los datos entre paréntesis</b> por tu nombre en el juego, tu rango médico (los bata verde son <i>Enfermero</i>) y tu usuario de Discord. <a class="zoom-link" href="assets/discord2.png" data-title="¿Dónde veo mi usuario de Discord?">¿Dónde veo mi usuario?</a> <b>Tener Discord es obligatorio</b>: si todavía no tenés cuenta, <a href="https://discord.com/register" target="_blank" rel="noopener">creala acá</a>.</p>
+            <p>Ejemplo para un bata verde llamado Pepito, con usuario de Discord <i>usuario</i>:</p>
+            <pre>/me Hola, mi nombre es Pepito, Enfermero de Servicios Médicos Malibu Latam.
+/n mi Discord: usuario</pre>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="step-n">3</span>
+          <div>
+            <h3>Buscá a un entrenador</h3>
+            <p>Cuando termines, <b>buscá a un entrenador</b>. ¿Todavía no tenés uno? Acercate a alguno o avisale a cualquier integrante.</p>
+          </div>
+        </div>
+        <p class="guide-tip">💡 La macro de presentación (<i>/me Hola, mi nombre es…</i>) sirve para saludar: cuando te cruces con alguien de otra facción, usala junto con el <b>gesto de saludo militar</b>.</p>
+      </div>
+    </details>
+
+    <div class="macro-progress">
+      <div class="macro-progress-bar"><span id="macroBar"></span></div>
+      <span id="macroCount" aria-live="polite">0 / 20 copiadas</span>
+    </div>
+
+    <section id="macro-grid" class="grid macros"></section>
+    <h2 id="galeria" class="section-title brand">Información importante</h2>
+    <div class="info-group-title" id="zonas-y-mapa">Accedé a cada tarjeta para ver más.</div>
+     
+    <section class="gallery three">
+      <article id="zonas-prohibidas" class="photo-card zoom" data-title="Zonas prohibidas" data-image="assets/zonas.png">
+        <img src="assets/prev-zonas.png" alt="Zonas prohibidas">
+        <div class="photo-info">
+          <div class="order-badge">01</div>
+          <h3>🚫 Zonas prohibidas</h3>
+          <p>Los lugares donde no se puede hacer RCP.</p><p>Durante el ascenso, tendrás que mencionarlas.</p>
+         <p class="card-hint">🔍 Ver zonas </p> </div>
+      </article>
+
+      <a id="mapa-zonas" class="photo-card" href="rcp-mapa.html">
+        <img src="assets/pre-mapa.webp" alt="Mapa de zonas prohibidas">
+        <div class="photo-info">
+          <div class="order-badge">02</div>
+          <h3>🗺️ Mapa de zonas prohibidas</h3>
+          <p>Verifica que conoces las zonas RCP tocando los puntos de la ciudad.</p> <p class="card-hint">🔍 Tocá para interactuar con el mapa </div>
+        </div>
+      </a>
+
+      <article id="normas-generales" class="photo-card zoom" data-title="Normas generales del hospital" data-image="assets/reglas-normas_generales.webp">
+        <img src="assets/camas.jpeg" alt="Normas generales del hospital">
+        <div class="photo-info">
+          <div class="order-badge">03</div>
+          <h3>📋 Normas generales del hospital</h3>
+          <p>Comportamiento y convivencia dentro del hospital.</p> <p class="card-hint">🔍 Ver las normas </div>
+        </div>
+      </article>
+
+      <article id="reglas-mostrador" class="photo-card zoom" data-title="Reglas detrás del mostrador y atención al paciente" data-image="assets/reglas_piso1.webp">
+        <img src="assets/prev-piso1.jpg" alt="Reglas detrás del mostrador y atención al paciente">
+        <div class="photo-info">
+          <div class="order-badge">04</div>
+          <h3>🩺 Reglas de mostrador y atención</h3>
+          <p>Brindar ayuda méica y vender píldoras.</p><p class="card-hint">🔍 Acceder a reglas</p>
+        </div>
+      </article>
+
+ <article id="reglas-mostrador" class="photo-card zoom" data-title="Reglas detrás del mostrador y atención al paciente" data-image="assets/reglas_piso1.webp">
+             <img src="assets/discordlogo.png" alt="Mapa de zonas prohibidas">
+        <div class="photo-info">
+          <div class="order-badge">06</div>
+          <h3>Usuario de Discord</h3>
+          <p>Creá un usuario en Discord</p>            <a class="nav-link" href="https://discord.gg/onestate-latam"  target="_blank" rel="noopener">Y unite al servidor OS LATAM</a>
+ </div>
+      </article>
+
+   
+    </section>
+
+    <div id="eventos" class="macro-help after highlight">
+      <p><b>No olvides tu barra de experiencia</b></p><p>🏅 Todos los días hay <b>eventos</b>, que suman medallas, y <b>capacitaciones</b>, que te ayudan a formarte. ¡Sumate!</p>
+      <p><a href="https://malibu-med-cronograma.vercel.app/" target="_blank" rel="noopener">📅 Ver capacitaciones de la semana</a></p>
+    </div>
+
+   
+
+
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="">
+          <div>
+            <strong>Servicios Médicos Malibu</strong>
+            <span>Centro de Formación Médica · OneState Roleplay</span>
+          </div>
+        </div>
+        <nav class="footer-cols" aria-label="Enlaces del pie">
+          <div class="footer-col">
+            <h4>Portal</h4>
+            <a href="index.html">🏠 Inicio</a>
+            <a href="bata-blanca.html#macros">🧾 Macros</a>
+            <a href="index.html#el-portal">🧭 Sobre el portal</a>
+          </div>
+          <div class="footer-col">
+            <h4>Ascensos</h4>
+            <a href="bata-blanca.html"><span class="coat-dot white"></span>Practicante de enfermería</a>
+            <a href="bata-azul.html"><span class="coat-dot blue"></span>Asistente de médico</a>
+            <a href="bata-morada.html"><span class="coat-dot purple"></span>Residente médico</a>
+            <a href="bata-cafe.html"><span class="coat-dot brown"></span>Médico residente</a>
+            <a href="bata-general.html"><span class="coat-dot green"></span>Médico general</a>
+            <a href="bata-especialista.html"><span class="coat-dot violet"></span>Médico especialista</a>
+          </div>
+          <div class="footer-col">
+            <h4>Comunidad</h4>
+            <a href="https://discord.gg/onestate-latam" target="_blank" rel="noopener">💬 Discord OneState Latam</a>
+            <a href="https://onestate.com" target="_blank" rel="noopener">🌐 Web oficial de OneState</a>
+          </div>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>Portal informativo · Facción Médica Malibu · OneState Roleplay</span>
+        <a class="footer-up" href="#">↑ Volver arriba</a>
+      </div>
+    </footer>
+  </main>
+<div id="toast" class="toast">✓ Copiado al portapapeles</div>
+
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <div class="lightbox-inner">
+      <div class="lightbox-head">
+        <h3 id="lightboxTitle">Imagen</h3>
+        <button id="closeLightbox" class="close-btn" type="button">Cerrar</button>
+      </div>
+      <div class="lightbox-body">
+        <img id="lightboxImage" src="" alt="Vista ampliada">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const macros = [
+      { titulo:"Taser para neutralizar", categoria:"/me", icono:"⚡", texto:"/me TASER TASER para neutralizar situación de peligro." },
+      { titulo:"Acceso a signos vitales", categoria:"/me", icono:"❤️", texto:"/me Inicio acceso a signos vitales de paciente." },
+      { titulo:"Maniobra de RCP", categoria:"/me", icono:"🫀", texto:"/me Realizo maniobra de RCP al paciente." },
+      { titulo:"Administrar medicamentos", categoria:"/me", icono:"💊", texto:"/me Administro medicamentos al paciente." },
+      { titulo:"Permiso para salir a hacer RCP", categoria:"/flobby", icono:"📣", texto:"/flobby Solicito permiso para salir a hacer RCP con un instructor." },
+      { titulo:"Preparando vehículo para RCP", categoria:"/flobby", icono:"🚑", texto:"/flobby Preparando vehículo médico para hacer RCP." },
+      { titulo:"Entrenamiento de personal", categoria:"/flobby", icono:"🎓", texto:"/flobby Entrenando nuevo personal médico en Macros/Rol/RCP." },
+      { titulo:"En ruta a llamada de emergencia", categoria:"/flobby", icono:"🚨", texto:"/flobby (10-17) En ruta a una llamada de emergencia." },
+      { titulo:"Localizando escena", categoria:"/flobby", icono:"📍", texto:"/flobby (10-20) Localizando escena de emergencia." },
+      { titulo:"Llegada a emergencia médica", categoria:"/me", icono:"🏥", texto:"/me (10-23) Emergencia médica Malibú ha llegado, mantenga la calma y despeje el área de atención médica. [ADVERTENCIA] Interferir con nuestra labor será sancionado." },
+      { titulo:"Llamada cancelada", categoria:"/flobby", icono:"❌", texto:"/flobby (10-22) Llamada de emergencia cancelada." },
+      { titulo:"No podemos ayudar en peligro", categoria:"/me", icono:"⚠️", texto:"/me (10-30) No podemos ayudarle durante situaciones de peligro para el personal médico." },
+      { titulo:"Retornando al hospital", categoria:"/flobby", icono:"✅", texto:"/flobby (10-24) Retornando al Hospital (código verde)." },
+      { titulo:"Entrega de medicamentos", categoria:"/flobby", icono:"💉", texto:"/flobby Preparando vehículo médico y en camino a entrega de medicamentos." },
+      { titulo:"Fuera de servicio", categoria:"/flobby", icono:"🛑", texto:"/flobby (10-7) Fuera de servicio." },
+      { titulo:"En servicio", categoria:"/flobby", icono:"🟢", texto:"/flobby (10-8) En servicio." },
+      { titulo:"TASER entrenamiento", categoria:"/do", icono:"🎯", texto:"/do TASER TASER TASER entrenamiento." },
+      { titulo:"Comunicado de atención", categoria:"/do", icono:"📢", texto:"/do [ATENCIÓN, COMUNICADO] Quienes ya hayan sido atendidos, por favor retírense. Gracias." },
+      { titulo:"Presentación médica", categoria:"/me", icono:"👨‍⚕️", texto:"/me Hola, mi nombre es (tu nombre aquí), (tu rango médico aquí) de Servicios Médicos Malibu Latam." },
+      { titulo:"Discord personal", categoria:"/n", icono:"💬", texto:"/n mi Discord: (tu usuario de Discord aquí)" }
+    ];
+
+    // Se muestra solo número + título; al tocar la tarjeta se copia el comando (portal.js).
+    const escapeHtml = str => str.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+    document.getElementById("macro-grid").innerHTML = macros.map((m, i) => `
+      <article class="card compact" data-copy="${escapeHtml(m.texto)}" aria-label="Copiar ${escapeHtml(m.titulo)}">
+        <div class="macro-row">
+          <div class="macro-number">${String(i + 1).padStart(2, "0")}</div>
+          <div class="macro-button-title">${escapeHtml(m.titulo)}</div>
+          <div class="copy-icon">⧉</div>
+        </div>
+      </article>`).join("");
+
+    // Las macros se copian en orden: solo se puede copiar la resaltada; al copiarla pasa a la siguiente.
+    const grid = document.getElementById("macro-grid");
+    const resetBtn = document.getElementById("macroReset");
+    const toast = document.getElementById("toast");
+    const toastText = toast.textContent;
+    const cards = [...grid.children];
+    const num = i => String(i + 1).padStart(2, "0");
+    let next = 0, warnTimer;
+    const bar = document.getElementById("macroBar");
+    const count = document.getElementById("macroCount");
+    function highlight(i){
+      next = i % cards.length;
+      cards.forEach((c, j) => c.classList.toggle("next", j === next));
+      resetBtn.hidden = next === 0;
+      // i = cantidad copiadas (llega a cards.length al copiar la última)
+      const done = Math.min(i, cards.length);
+      bar.style.width = `${done / cards.length * 100}%`;
+      count.textContent = done === cards.length ? "✓ ¡Todas copiadas!" : `${done} / ${cards.length} copiadas`;
+      count.classList.toggle("done", done === cards.length);
+    }
+    function warn(card){
+      toast.textContent = `✋ Primero copiá la macro ${num(next)}`;
+      toast.classList.add("show", "warn");
+      clearTimeout(warnTimer);
+      warnTimer = setTimeout(() => { toast.classList.remove("show", "warn"); toast.textContent = toastText; }, 1600);
+      card.classList.remove("blocked"); void card.offsetWidth; card.classList.add("blocked");
+      cards[next].scrollIntoView({ block: "nearest", behavior: "smooth" });
+    }
+    // En fase de captura, antes de que portal.js copie el texto
+    function guard(e){
+      if(e.type === "keydown" && e.key !== "Enter" && e.key !== " ") return;
+      const card = e.target.closest(".card");
+      if(!card) return;
+      const i = cards.indexOf(card);
+      if(i !== next){ e.stopPropagation(); e.preventDefault(); warn(card); return; }
+      clearTimeout(warnTimer); toast.classList.remove("warn"); toast.textContent = toastText;
+      highlight(i + 1);
+    }
+    grid.classList.add("sequence");
+    grid.addEventListener("click", guard, true);
+    grid.addEventListener("keydown", guard, true);
+    resetBtn.addEventListener("click", () => highlight(0));
+    highlight(0);
+  </script>
+  <script src="portal.js"></script>
+<!-- Chatbot de ascensos (Botpress)
+  <script src="https://cdn.botpress.cloud/webchat/v3.7/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2026/09/28/02/20260928022715-4YN7U7VH.js" defer></script>
+ --></body>
+</html>
